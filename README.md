@@ -124,6 +124,231 @@
 
 自宅などGoogle Colaboratoryではないマシンにインストールして利用するには、次を参考にチャレンジしてください。特に困らないであろうというところは、説明を省略しています。
 
+- WindowsかUbuntu PCを準備
+- Windowsの場合は以下の通りにインストール
+  - WSL2 Ubuntu-20.04 LTSのインストール
+Windowsマークを右クリック→Windowsターミナル（管理者）を立ち上げ、以下のコマンドラインからWSL2 Ubuntu-20.04 LTSをインストール 
+> wsl --install -d Ubuntu-20.04 
+  - NVIDIAドライバのインストール
+NVIDIAのダウンロードサイトから、windows->x86_64->11->exe を選択してダウンロード 
+  - コマンドラインに以下をいれて動作を確認
+> nvidia-smi 
+  - WSLの自動インストーラで一式導入するため、WSLのshellを起動 
+> git clone https://github.com/tak6uch1/wsl2_pytorch_tf_gpu.git 
+> cd wsl2_pytorch_tf_gpu 
+> bash 1_install_cuda.sh 
+  - CuDNNのインストール
+NVIDIAのCuDNNダウンロードサイトをブラウザで開き、I Agree～にチェックを入れ、CUDA 11.5を選択 
+ 
+Local Installer for Ubuntu20.04 x86_64[Deb] をダウンロード 
+ダウンロードフォルダにcudnn-local-repo-ubuntu2004-8.3.2.44_1.0-1_amd64.debがダウンロードされる 
+
+  - wsl2_pytorch_tf_gpuに移動して3_install_cudnn.shを実行
+```
+mv /mnt/c/Users/user_name/Downloads/cudnn-local-repo-ubuntu2004-8.3.2.44_1.0-1_amd64.deb .
+bash 2_install_cudnn.sh
+```
+  - Anacondaのインストール
+Anacondaのサイトからインストール用スクリプトをダウンロード 
+Linux 64-Bit(x86) Installer を選択 
+  - インストール用スクリプトを実行
+bash /mnt/c/Users/user_name/Downloads/Anaconda3-2021.11-Linux-x86_64.sh 
+user_nameは自身のアカウント名で置き換えること
+  - Anacondaインストーラが~/.bashrcに設定を追記するため、sourceする
+source ~/.bashrc
+  - Tensorflow
+Anacondaをインストールするとcondaコマンドが使えるようになる 
+Tensorflow用の仮想環境をpython 3.8でtfとして作成し、アクティベート 
+```
+conda create -n tf python=3.8
+conda activate tf
+```
+  - Tensorflow 2.4.2とJupyter Notebookをインストールします。
+```
+pip install -U pip
+pip install tensorflow==2.4.2
+pip install notebook
+```
+
+python check_gpu.py
+以下のようにdevide_type: “GPU”が表示されれば、正しくGPUを認識できています。
+
+((( 省略 )))
+2022-02-23 23:46:01.546559: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/device:GPU:0 with 4704 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 3060 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.6)
+[name: "/device:CPU:0"
+device_type: "CPU"
+memory_limit: 268435456
+locality {
+}
+incarnation: 8160991584963335352
+, name: "/device:GPU:0"
+device_type: "GPU"
+memory_limit: 4932619488
+locality {
+  bus_id: 1
+  links {
+  }
+}
+incarnation: 13520606410012444221
+physical_device_desc: "device: 0, name: NVIDIA GeForce RTX 3060 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.6"
+]
+Jupyter Notebookを起動します。
+
+jupyter notebook
+ここで画面が消えてしまいますが、Ctrl+Cを押すと以下のようなURLが表示されるので、コピーしてブラウザのアドレス入力部分に貼り付けます。
+
+http://127.0.0.1:8888/?token=XXXXXXXXXXXXX
+以下のようにJupyter Notebookが立ち上がるので、New→Python 3からPython3の入力モードに移行します。
+
+
+以下を入力し、Shift+Enterで実行します。
+
+%%time
+run -i mnist_cnn.py
+以下のように表示されれば成功です。
+
+
+USBカメラの接続
+WindowsとWSL2 Ubuntuとの間でUSB通信の仲介をするusbipd-winを使ってUSBカメラを使えるようにします。
+
+USBカメラを使用しない方は、本章を読み飛ばして結構です。
+
+usbipd-winのインストール
+usbipd-winのサイトの右側にあるReleasesのリンクから最新のインストーラをダウンロードします。（2022年2月現在、最新バージョンは2.1.0）
+
+ダウンロードしたインストーラ（usbipd-win_2.1.0.msi）をダブルクリックしてインストールします。
+
+Windows Defenderの設定
+Windows Defenderのファイアウォールの設定でusbipdの通信を許可する必要があります。
+
+虫眼鏡マーク→defeなどと入力するとWindows Defenderが見つかりますので起動します。
+
+Windows Defender
+①受信の規則→②新しい規則→③カスタム と進みます。
+
+Defender 1
+プログラムから、インストールしたusbipd.exeを指定します。
+
+Defender 2
+作成した規則にusbipdなどと名前を付けて完了を押したらWindows Defenderの設定終了です。
+
+
+WSL2カーネルのビルド
+usbipdを使ってUSB接続のWeb Cameraを使用するために、WSL2のカーネルを再ビルドしないとうまく通信できなかったため、この処理が必要になりました。
+
+git clone https://github.com/tak6uch1/win11wsl2_kernel4usb.git
+ここで、カーネルのバージョンと日付を確認しておきます。
+
+uname -v -r
+5.10.60.1-microsoft-standard-WSL2 #1 SMP Wed Aug 25 23:20:18 UTC 2021
+ダウンロードされた以下のスクリプトbuild_kernel.shを実行します。
+
+cd win11wsl2_kernel4usb
+bash build_kernel.sh
+WSL2を再起動する必要があるので、一度Ubuntu 20.04のターミナルを終了します。
+
+exit
+Windowsターミナルから以下のコマンドでWSL2をシャットダウンします。
+
+PS> wsl --shutdown
+PS> の部分はWindowsターミナルのPower Shell上の実行を表すための表現で、入力不要です。
+
+単に wsl --shutdown と入力してください。
+
+再度Ubuntu 20.04のターミナルを立ち上げます。
+
+Start wsl ubuntu
+再度カーネルのバージョンと日付を確認します。
+
+uname -v -r
+5.10.60.1-microsoft-standard-WSL2+ #1 SMP Wed Feb 23 15:55:05 JST 2022
+上記のように日付が変わっていれば、再ビルドしたカーネルが実行されています。
+
+カーネルビルドを行うと/mnt/c/Users/user_name/.wslconfigにビルドしたカーネルの情報が書き込まれます。
+
+元のカーネルに戻したい場合は、上記ファイルを削除するか別のファイル名に変更します。
+
+USBカメラをUSB端子に接続し、Windowsターミナルから以下のコマンドを実行してUSBに接続されているデバイスを確認します。
+
+PS> usbipd wsl list
+以下のように表示されるので、1-4がUSBカメラでNot attachedになっていることがわかります。
+
+BUSID  DEVICE                                                        STATE
+1-4    USB Camera, USB 2.0 Camera                                    Not attached
+1-14   インテル(R) ワイヤレス Bluetooth(R)                           Not attached
+2-1    USB 入力デバイス                                              Not attached
+2-2    USB 入力デバイス                                              Not attached
+以下のコマンドでWSL2にアタッチして再度USB接続の確認をします。
+
+PS> usbipd wsl attach -b 1-4
+PS> usbipd wsl list
+今度は以下のとおり、アタッチされていることがわかります。
+
+BUSID  DEVICE                                                        STATE
+1-4    USB Camera, USB 2.0 Camera                                    Attached - Ubuntu-20.04
+1-14   インテル(R) ワイヤレス Bluetooth(R)                           Not attached
+2-1    USB 入力デバイス                                              Not attached
+2-2    USB 入力デバイス                                              Not attached
+今度はWSL2 Ubuntuのターミナルで以下を実行し、USBカメラデバイスが認識されていることを確認します。
+
+lsulb
+以下のように表示されます。
+
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 002: ID 0c45:6366 Microdia USB 2.0 Camera
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+以下のコマンドでvideoデバイスのアクセスを許可します。
+
+sudo chmod 777 /dev/video*
+OpenCVを仮想環境tfにインストールします。
+
+conda install -c conda-forge opencv
+以下のコマンドでカメラ入力のテストを行います。
+
+python camera_test.py
+以下のように画像が表示されれば成功です。
+
+Camera Test
+カメラ入力する異なるPythonプログラムを実行した際などにカメラ入力ができなくなることがありました。
+
+対策は「トラブルシューティング」の章をご覧ください。
+
+PyTorch
+Python 3.9の仮想環境torchを作ってアクティベートします。
+
+conda deactivate
+conda create -n torch python=3.9
+conda activate torch
+PyTorchのGPU環境とJupyter Notebookをインストールします。
+
+pip install -U pip
+pip install torch==1.10.2+cu113 torchvision==0.11.3+cu113 torchaudio==0.10.2+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+pip install notebook
+上記PyTorchのインストールコマンドはPyTorchのサイトから下図の設定で入手できます。
+
+PyTorch Install Command
+PyTorchのバージョンを確認します。
+
+python check_pytorch.py
+以下のように表示されれば成功です。
+
+1.10.2+cu113 True
+tensor([[0.6327, 0.3665, 0.6174],
+        [0.1698, 0.8373, 0.3658],
+        [0.2713, 0.0527, 0.8659],
+        [0.4002, 0.0120, 0.8794],
+        [0.7513, 0.2406, 0.3140]])
+MNISTの学習を試してみます。
+
+python mnist_cnn_pytorch.py
+Tensorflow実行時も同様ですが、学習中にタスクマネージャを開いてGPUの使用率を確認することができます。
+
+GPU usage
+
+
+
+
+
 - Cuda Toolkitをインストール
 
 基本最新版で問題ありません。
