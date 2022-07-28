@@ -163,44 +163,6 @@ Tensorflow用の仮想環境をpython 3.8でtfとして作成し、アクティ�
 conda create -n tf python=3.8
 conda activate tf
 ```
-  - Tensorflow 2.4.2とJupyter Notebookをインストール
-```
-pip install -U pip
-pip install tensorflow==2.7.2
-pip install notebook
-```
-  - 動作確認
-```
-python ./check_gpu.py
-```
-以下のようにdevide_type: “GPU”が表示されれば、正しくGPUを認識できている
-```
-[name: "/device:CPU:0"
-device_type: "CPU"
-memory_limit: 268435456
-locality {
-}
-incarnation: 8160991584963335352
-, name: "/device:GPU:0"
-device_type: "GPU"
-memory_limit: 4932619488
-locality {
-  bus_id: 1
-  links {
-  }
-}
-incarnation: 13520606410012444221
-physical_device_desc: "device: 0, name: NVIDIA GeForce RTX xxxx GPU, pci bus id: 0000:01:00.0, compute capability: 8.6"
-]
-```
-  - Jupyter Notebookを起動
-jupyter notebook 
-Ctrl+Cを押すと以下のようなURLが表示されるので、コピーしてブラウザのアドレス入力部分に貼り付け
-```
-http://127.0.0.1:8888/?token=XXXXXXXXXXXXX
-```
-  - Jupyter Notebookの立ち上げ
-
 - Ubuntuへの導入
   - Cuda Toolkitをインストール
 
