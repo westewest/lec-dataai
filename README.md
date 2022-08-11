@@ -259,12 +259,16 @@ Windows
 conda install -y -c mzh mecab-python3
 
 pip install requests beautifulsoup4
+```
+
+なお、次が必要となる場合もあります。
+```
 pip install --upgrade numpy
 ```
 
 - tensorflowを入れる
 
-これが、pythonのバージョン整合が厳しく、失敗することが比較的多いです。
+これが、pythonのバージョン整合が厳しく、失敗することが比較的多いです。なお、Windows11 のWSL環境では、問題なくインストール可能です。
 ```
 conda install -y tensorflow-gpu tensorflow-datasets tensorflow-hub
 ```
