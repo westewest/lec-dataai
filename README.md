@@ -196,8 +196,12 @@ toolkitバージョンはpytorthのホームページで確認してください
 ```
 Linux
 conda install -y pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch -c nvidia
+もしくは
+conda install -y pytorch torchvision torchaudio cudatoolkit=11.6 -c pytorch -c conda-forge
 Windows
 conda install -y pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch -c pytorch
+もしくは
+conda install -y pytorch torchvision torchaudio cudatoolkit=11.6 -c pytorch -c conda-forge
 #(バージョンによってはこちらだがお勧めしない) conda install -y pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch -c conda-forge
 ```
 導入したら、次で動作を確認
