@@ -312,7 +312,7 @@ Git Bashを導入しない場合、Windowsでは、lsなどUnix系コマンド�
 
 メモ帳でも、busyboxのviでもよいので、jupyterrun.batというファイルを作成します。中身は次の通りです。
 ```
-jupyter notebook --no-browser --NotebookApp.allow_origin='https://colab.research.google.com' --port=8888 --NotebookApp.prt_retries=0 --allow-root --ip=0.0.0.0 --NotebookApp.token=''
+jupyter notebook --no-browser --NotebookApp.allow_origin='https://colab.research.google.com' --port=8888 --NotebookApp.port_retries=0 --allow-root --ip=0.0.0.0 --NotebookApp.token=''
 ```
 
 - 最初に一度jupyterrun.batを実行する
