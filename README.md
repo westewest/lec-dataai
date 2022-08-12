@@ -196,8 +196,12 @@ toolkitバージョンはpytorthのホームページで確認してください
 ```
 Linux
 conda install -y pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch -c nvidia
+もしくは
+conda install -y pytorch torchvision torchaudio cudatoolkit=11.6 -c pytorch -c conda-forge
 Windows
 conda install -y pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch -c pytorch
+もしくは
+conda install -y pytorch torchvision torchaudio cudatoolkit=11.6 -c pytorch -c conda-forge
 #(バージョンによってはこちらだがお勧めしない) conda install -y pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch -c conda-forge
 ```
 導入したら、次で動作を確認
@@ -259,12 +263,16 @@ Windows
 conda install -y -c mzh mecab-python3
 
 pip install requests beautifulsoup4
+```
+
+なお、次が必要となる場合もあります。
+```
 pip install --upgrade numpy
 ```
 
 - tensorflowを入れる
 
-これが、pythonのバージョン整合が厳しく、失敗することが比較的多いです。
+これが、pythonのバージョン整合が厳しく、失敗することが比較的多いです。なお、Windows11 のWSL環境では、問題なくインストール可能です。
 ```
 conda install -y tensorflow-gpu tensorflow-datasets tensorflow-hub
 ```
@@ -312,7 +320,7 @@ Git Bashを導入しない場合、Windowsでは、lsなどUnix系コマンド�
 
 メモ帳でも、busyboxのviでもよいので、jupyterrun.batというファイルを作成します。中身は次の通りです。
 ```
-jupyter notebook --no-browser --NotebookApp.allow_origin='https://colab.research.google.com' --port=8888 --NotebookApp.prt_retries=0 --allow-root --ip=0.0.0.0 --NotebookApp.token=''
+jupyter notebook --no-browser --NotebookApp.allow_origin='https://colab.research.google.com' --port=8888 --NotebookApp.port_retries=0 --allow-root --ip=0.0.0.0 --NotebookApp.token=''
 ```
 
 - 最初に一度jupyterrun.batを実行する
