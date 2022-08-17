@@ -264,6 +264,12 @@ conda install -y -c mzh mecab-python3
 
 pip install requests beautifulsoup4
 ```
+- さらに次も自然言語処理で利用します
+```
+apt install libmecab-dev mecab mecab-ipadic-utf8
+pip install mecab-python3
+ln -s /etc/mecabrc /usr/local/etc/mecabrc
+```
 
 なお、次が必要となる場合もあります。
 ```
