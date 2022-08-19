@@ -108,6 +108,12 @@
 - G-PyTorch-自然言語処理-2
   - [![dataai-text-G-PyTorch-自然言語処理-2.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-G-PyTorch-自然言語処理-2.ipynb)
 
+- G-PyTorch-自然言語処理-3
+  - [![dataai-text-G-PyTorch-自然言語処理-4.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-G-PyTorch-自然言語処理-3.ipynb)
+  
+- G-PyTorch-自然言語処理-4
+  - [![dataai-text-G-PyTorch-自然言語処理-4.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-G-PyTorch-自然言語処理-4.ipynb)
+
 - H-PyTorch-音声識別
   - [![dataai-text-H-PyTorch-音声識別.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-H-PyTorch-音声識別.ipynb)
 
