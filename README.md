@@ -128,6 +128,9 @@
 - I-StyleGAN-3  
 [![dataai-text-I-StyleGAN-3.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-I-StyleGAN-3.ipynb)
 
+- J-Diffusion  
+[![dataai-text-I-StyleGAN-3.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-J-Diffusion.ipynb)
+
 ## Cuda環境の構築について
 
 Colabを利用すると様々な制約がありますが、自分のマシンに環境を構築することでこの制約を取り除くことができます
