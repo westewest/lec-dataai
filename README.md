@@ -208,7 +208,7 @@ conda update -y --all
 
 - Pytorhをインストールする
 
-toolkitバージョンはpytorthのホームページで確認してください。
+toolkitバージョンはpytorthのホームページで確認してください
 ```
 Linux
 conda install -y pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch -c nvidia
@@ -227,7 +227,8 @@ python
 >>> print(torch.cuda.is_available())
 True
 ```
-最後にTrueと出ればOK。出ない場合は、頑張って解決しましょう。例えば、間違ってcpu版が入っている可能性があります。
+最後にTrueと出ればOK、出ない場合は、頑張って解決しましょう  
+例えば、間違ってcpu版が入っている可能性があります
 
 - Jupyter Notebookをインストール
 
@@ -258,7 +259,8 @@ conda install -y lxml
 
 - OpenCVをインストール
 
-ちょっと大物なので、分けています。conda install opencv はうまくいかないので次のようにするとよいでしょう。
+ちょっと大物なので、分けています  
+conda install opencv はうまくいかない場合次のようにするとよいでしょう
 
 ```
 pip install opencv-python
@@ -311,10 +313,11 @@ conda install -y tensorflow-gpu tensorflow-datasets tensorflow-hub -c conda-forg
 conda install -y -c conda-forge quilt
 quilt install --force ResidentMario/missingno_data
 ```
+
 - おまけ
 
-中にはwgetなど、Linux系のコマンドを利用しています。  
-Linux上で構築する場合は特に問題とはなりませんが、Windows上で構築するには、次の2つのLinuxで著名なコマンドラインツールを導入をしておくとよいでしょう。
+中にはwgetなど、Linux系のコマンドを利用しています  
+Linux上で構築する場合は特に問題とはなりませんが、Windows上で構築するには、次の2つのLinuxで著名なコマンドラインツールを導入をしておくとよいでしょう
 
   - wgetの導入
 
@@ -322,35 +325,46 @@ Linux上で構築する場合は特に問題とはなりませんが、Windows�
 
 https://sourceforge.net/projects/gnuwin32/files/wget/1.11.4-1/wget-1.11.4-1-setup.exe/download
 
-これを実行するだけです。ほかのアーキテクチャでも同様に、利用できるようにしてください。
+これを実行するだけです  
+ほかのアーキテクチャでも同様に、利用できるようにしてください
 
   - Gitの導入
   
-GitHub環境を自身のマシンに導入する際には、ほぼ必須ともいえるツールです。特に、Windowsユーザの皆さんには、Git Bashの導入をお勧めします。Git Bashを導入することで、下記、busyboxの導入は不要になるといえます。
+GitHub環境を自身のマシンに導入する際には、ほぼ必須ともいえるツールです  
+特に、Windowsユーザの皆さんには、Git Bashの導入をお勧めします  
+Git Bashを導入することで、下記、busyboxの導入は不要になるといえます
 
   - busyboxの導入
 
-Git Bashを導入しない場合、Windowsでは、lsなどUnix系コマンドは基本実行できません(Windows11でかなり良くなりますが)。そこで、次のbusyboxの導入が検討されます。https://frippery.org/files/busybox/busybox.exe
+Git Bashを導入しない場合、Windowsでは、lsなどUnix系コマンドの実行はかなり厄介です(Windows11でかなり良くなりますが)  
+そこで、次のbusyboxの導入が検討されますが、お勧めではありません(https://frippery.org/files/busybox/busybox.exe)
 
-導入後、busybox.exeをC:\Windowsにコピーして、その中で busybox --installとするとメジャーコマンドが利用できるようになります。
+導入後、busybox.exeをC:\Windowsにコピーして、その中で busybox --installとするとメジャーコマンドが利用できるようになります
 
 ### Jupyter NotebookをGoogle Colaboratoryに接続する
 
-これが重要です。Google Colaboratoryに慣れている人は、ピュアなJupyter Notebookは使いにくいと感じると思います。そこで、いつも通りGoogle Colaboratoryを利用しつつ、ローカルの計算リソースを利用することができますので、紹介します。
+これが重要です  
+Google Colaboratoryに慣れている人は、ピュアなJupyter Notebookは使いにくいと感じると思います  
+そこで、いつも通りGoogle Colaboratoryを利用しつつ、ローカルの計算リソースを利用することができますので、紹介します
 
 - 最初だけ、実行バッチファイルを作成する
 
-メモ帳でも、busyboxのviでもよいので、jupyterrun.batというファイルを作成します。中身は次の通りです。
+メモ帳でも、busyboxのviでもよいので、jupyterrun.batというファイルを作成します。中身は次の通りです
 ```
 jupyter notebook --no-browser --NotebookApp.allow_origin='https://colab.research.google.com' --port=8888 --NotebookApp.port_retries=0 --allow-root --ip=0.0.0.0 --NotebookApp.token=''
 ```
+なお、この仕様は近々変更される予定で、
+```
+jupyter notebook --no-browser --ServerApp.allow_origin='https://colab.research.google.com' --port=8888 --ServerApp.port_retries=0 --allow-root --ip=0.0.0.0 --ServerApp.token=''
+```
+とする必要があるかもしれません
 
 - 最初に一度jupyterrun.batを実行する
 
-ログが吐き出され動き出すはずです。これが動いている間は、複数のセッションが接続できます。
+ログが吐き出され動き出すはずです。これが動いている間は、複数のセッションが接続できます
 
 - 普通にGoogle Colaboratoryでノートブックを開き、「接続」する際に、「ローカルランタイムに接続」を選択する
 
-http://localhost:8888/ バックエンドに指定されているはずですので、そのまま接続とします。
+http://localhost:8888/ バックエンドに指定されているはずですので、そのまま接続とします
 
-これで、 Google Coalbを利用せず、自分の環境を利用するようになります。全ての制限が外れます。つまり、利用時間やセッションの制限はなくなり、ファイルが消えることもありません。
+これで、 Google Coalbを利用せず、自分の環境を利用するようになります。全ての制限が外れます。つまり、利用時間やセッションの制限はなくなり、ファイルが消えることもありません
