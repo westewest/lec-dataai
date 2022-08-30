@@ -355,7 +355,7 @@ jupyter notebook --no-browser --NotebookApp.allow_origin='https://colab.research
 ```
 なお、この仕様は近々変更される予定で、
 ```
-jupyter notebook --no-browser --ServerApp.allow_origin='https://colab.research.google.com' --port=8888 --ServerApp.port_retries=0 --allow-root --ip=0.0.0.0 --ServerApp.token=''
+jupyter notebook --no-browser --ServerApp.allow_origin='https://colab.research.google.com' --port=8888 --ServerApp.port_retries=0 --allow-root --ip=0.0.0.0 --NotebookApp.token=''
 ```
 とする必要があるかもしれません
 
