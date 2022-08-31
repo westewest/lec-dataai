@@ -242,7 +242,11 @@ jupyter serverextension enable --py jupyter_http_over_ws
 jupyter nbextension enable --py widgetsnbextension
 ```
 
-- 授業で利用するライブラリをインストール
+- 授業で利用するライブラリをインストール  
+なお、condaで入れていますが、-c conda-forge オプションが必要な場合もあります  
+`Solving environment: failed with initial frozen solve. Retrying with flexible solve.`と表示された場合は、多くの場合待っても解決しない可能性が高いです  
+baseでconda update condaとしてcondaを更新するのも一つの手ですが、環境は人によって異なるため、もがかなければなりません  
+一つの簡単な方法は、あるテキストやあるコード専用の環境を作り、バージョンのコンフリクトを排除する、というのも手です
 
 ```
 conda install -y numpy
@@ -258,33 +262,40 @@ conda install -y pydotplus
 conda install -y seaborn
 conda install -y missingno
 conda install -y lxml
+conda install -y lightgbm
+conda install -y xgboost
+conda install -y ipywidgets
+conda install -y requests
+conda install -y beautifulsoup4
+conda install -y gensim
+```
+
+確認において、conda-forgeの利用が必要なライブラリは以下の通りです
+```
+conda install -y -c conda-forge librosa
 ```
 
 - OpenCVをインストール
-
-ちょっと大物なので、分けています  
-conda install opencv はうまくいかない場合次のようにするとよいでしょう
-
+今は、これで入るはずです
 ```
 pip install opencv-python
+
+```
+
+なお、以下の方法もありますが、不要のはずです
+```
+conda install opencv こちらが上手くいかない場合は、conda-forgeで
 conda install -y -c conda-forge opencv
-conda install -y -c conda-forge librosa
-conda install -y -c conda-forge lightgbm
-conda install -y -c conda-forge xgboost
-conda install -y -c conda-forge ipywidgets
-conda install -y -c conda-forge gensim
 ```
 
 - そのほかの関連ライブラリをインストール
-
 ```
 Linux
 conda install -y -c conda-forge mecab
 Windows
 conda install -y -c mzh mecab-python3
-
-pip install requests beautifulsoup4
 ```
+
 - さらに次も自然言語処理で利用します
 ```
 apt install libmecab-dev mecab mecab-ipadic-utf8
@@ -299,7 +310,7 @@ pip install --upgrade numpy
 
 - tensorflowを入れる
 
-これが、pythonのバージョン整合が厳しく、失敗することが比較的多いです。なお、Windows11 のWSL環境では、問題なくインストール可能です。
+これが、pythonのバージョン整合が厳しく、失敗することもあります
 ```
 conda install -y tensorflow-gpu tensorflow-datasets tensorflow-hub
 ```
@@ -307,11 +318,12 @@ conda install -y tensorflow-gpu tensorflow-datasets tensorflow-hub
 ```
 conda install -y tensorflow-gpu tensorflow-datasets tensorflow-hub -c conda-forge
 ```
-で入る場合もあります。なお、tensorflow-gpuさえ入ればなんとかなります。
+で入る場合もあります  
+なお、tensorflow-gpuさえ入ればなんとかなります
 
-- quiltを入れる
-
-これも、pythonのバージョンに厳しく、新しいpythonではインストールできないようです。といっても、利用するのは一か所だけなので、なくても大丈夫です。
+- 以下は対策して不要としています
+  - quilt
+これも、pythonのバージョンに厳しく、インストールが難しくなりつつあります
 ```
 conda install -y -c conda-forge quilt
 quilt install --force ResidentMario/missingno_data
