@@ -307,6 +307,10 @@ conda install -y -c conda-forge opencv
 ```
 
 - 言語処理系ライブラリのインストール
+  - pytorch系
+```
+pip install torchdata torchtext
+```
   - mecab関連  
   ほぼ役割を終えましたが…
 ```
