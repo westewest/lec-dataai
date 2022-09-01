@@ -297,7 +297,6 @@ conda install -y -c conda-forge librosa
 今は、これで入るはずです
 ```
 pip install opencv-python
-
 ```
 
 なお、以下の方法もありますが、不要のはずです
