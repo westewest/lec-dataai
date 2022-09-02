@@ -353,8 +353,8 @@ pip install --upgrade numpy
 ```
 
 - tensorflowを入れる
-
-これが、pythonのバージョン整合が厳しく、失敗することもあります
+これが、pythonのバージョン整合が厳しく、失敗することもあります  
+さらに、tensorflowを入れることで、pytorchのアーキテクチャサポートが制限されるという現象から、tensorflow用の環境を別途clone作成してからインストールすることをお勧めします
 ```
 conda install -y tensorflow-gpu tensorflow-datasets tensorflow-hub
 ```
