@@ -285,6 +285,7 @@ jupyter nbextension enable --py widgetsnbextension
 ```
 
 ### 授業で利用するライブラリをインストール  
+#### condaで普通に導入
 なお、condaで入れていますが、-c conda-forge オプションが必要な場合もあります  
 `Solving environment: failed with initial frozen solve. Retrying with flexible solve.`と表示され、多くの場合かなり待たされます
 - さらに待っても解決しない可能性が高いです  
@@ -307,12 +308,14 @@ conda install -y numpy pandas matplotlib scikit-learn scikit-learn-intelex sciki
 ```
 とやっても大丈夫、ということです
 
+#### conda-forgeを利用して導入
 確認において、conda-forgeの利用が必要なライブラリは以下の通りです
 - かなり先で使いますので無理にインストールする必要はありません
 ```
 conda install -y -c conda-forge librosa
 ```
 
+#### pipを利用して導入
 - OpenCVをインストール
 今は、これで入るはずです
 ```
@@ -325,13 +328,13 @@ conda install opencv こちらが上手くいかない場合は、conda-forgeで
 conda install -y -c conda-forge opencv
 ```
 
-- 言語処理系ライブラリのインストール
-  - pytorch系
+#### 言語処理系ライブラリ
+- pytorch関連
 ```
 pip install torchdata torchtext
 ```
-  - mecab関連  
-  ほぼ役割を終えましたが…
+- mecab関連  
+ほぼ役割を終えましたが…
 ```
 conda install -y -c conda-forge mecab
 ```
@@ -343,8 +346,8 @@ ln -s /etc/mecabrc /usr/local/etc/mecabrc
 ```
 - テキストの中も相当数追加していますので注意してください
 
-- その他
-  -  次が必要となる場合もあります。
+#### その他
+-  次が必要となる場合もあります。
 ```
 pip install --upgrade numpy
 ```
