@@ -244,6 +244,14 @@ conda install -y pytorch torchvision torchaudio cudatoolkit=11.x -c pytorch -c n
 もしくは
 conda install -y pytorch torchvision torchaudio cudatoolkit=11.x -c pytorch -c conda-forge
 ```
+ですが、今トライしているということは、比較的新しいGPUを持っているのではないかと思います  
+その場合は、Torch NightlyというPreview版が必要になる場合があります(3090は2022年9月時点でも必要です)
+
+```
+conda install pytorch torchvision torchaudio cudatoolkit=11.6 -c pytorch -c conda-forge
+```
+となります
+
 導入したら、次で動作を確認  
 ```
 python
@@ -254,6 +262,8 @@ True
 ```
 最後にTrueと出ればOK、出ない場合は、頑張って解決しましょう  
 例えば、間違ってcpu版が入っている可能性があります
+
+
 
 ### Jupyter Notebookをインストール
 Google Colaboratoryと協調動作させることや、Colabなしでもテキストの閲覧と実行ができるようになります  
