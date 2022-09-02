@@ -245,10 +245,11 @@ conda install -y pytorch torchvision torchaudio cudatoolkit=11.x -c pytorch -c n
 conda install -y pytorch torchvision torchaudio cudatoolkit=11.x -c pytorch -c conda-forge
 ```
 ですが、今トライしているということは、比較的新しいGPUを持っているのではないかと思います  
-その場合は、Torch NightlyというPreview版が必要になる場合があります(3090は2022年9月時点でも必要です)
+その場合は、Torch NightlyというPreview版が必要になる場合があります(3090は2022年9月時点でも必要です) 
+- 3090などsm_86アーキテクチャは11.6からサポートとなっています
 
 ```
-conda install pytorch torchvision torchaudio cudatoolkit=11.6 -c pytorch -c conda-forge
+conda install pytorch torchvision torchaudio pytorch-cuda=11.x -c pytorch-nightly -c nvidia
 ```
 となります
 
@@ -256,14 +257,23 @@ conda install pytorch torchvision torchaudio cudatoolkit=11.6 -c pytorch -c cond
 ```
 python
 >>> import torch
+>>> print(torch.cuda.is_available)
+<function is_available at 0x7fcd1fc94820>
 >>> print(torch.cuda.is_available())
 True
 >>> print(torch.cuda.get_device_name())
+NVIDIA GeForce RTX 3090
+>>> print(torch.version.cuda)
+11.6
+>>> print(torch.cuda.get_arch_list())
+['sm_37', 'sm_50', 'sm_60', 'sm_61', 'sm_70', 'sm_75', 'sm_80', 'sm_86', 'compute_37']
+>>>
 ```
-最後にTrueと出ればOK、出ない場合は、頑張って解決しましょう  
+などとなりますが、まず最初にTrueと出ればOK、出ない場合は、頑張って解決しましょう  
 例えば、間違ってcpu版が入っている可能性があります
 
-
+最後の一覧に、所有しているGPUのアーキテクチャが含まれていれば、サポートされています
+- なくても動作していましたし、それなりに計算速度も速くなるようです
 
 ### Jupyter Notebookをインストール
 Google Colaboratoryと協調動作させることや、Colabなしでもテキストの閲覧と実行ができるようになります  
