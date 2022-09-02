@@ -404,3 +404,17 @@ jupyter notebook --no-browser --App.allow_origin='https://colab.research.google.
 http://localhost:8888/ バックエンドに指定されているはずですので、そのまま接続とします
 
 これで、 Google Coalbを利用せず、自分の環境を利用するようになります。全ての制限が外れます。つまり、利用時間やセッションの制限はなくなり、ファイルが消えることもありません
+
+## 注意
+
+一度動く環境ができたら、その環境を維持するため、`conda update --all`すらも避けるべきです
+- これで壊してしまった経験が何度かあります
+```
+conda create -n copyenv --clone originenv
+```
+として、環境をコピーしてから始めるとよいです
+
+その他、よく使うコマンドを紹介しておきます
+- `conda info -e`: 作った環境の一覧を表示
+- `conda create -n test`: testという名前の環境を作成
+- `conda remove -n test --all`: testという環境を削除
