@@ -441,3 +441,6 @@ conda create -n copyenv --clone originenv
 - `conda info -e`: 作った環境の一覧を表示
 - `conda create -n test`: testという名前の環境を作成
 - `conda remove -n test --all`: testという環境を削除
+- `conda create -n myenv python=3.7`: Python バージョンを指定して作成
+- `conda activate test`: 環境testの有効化
+- `conda deactivate`: 環境の無効化
