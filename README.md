@@ -134,107 +134,151 @@
 - J-PyTorch-Diffusion  
 [![dataai-text-I-StyleGAN-3.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-J-PyTorch-Diffusion.ipynb)
 
-## Cuda環境の構築について
+----
 
-Colabを利用すると様々な制約がありますが、自分のマシンに環境を構築することでこの制約を取り除くことができます
+## CUDA環境の構築について
+
+テキストは、すべてGoogle Colaboratory上で実行することを想定しています
+
+しかしながら、Colabを利用すると様々な制約があることも事実です  
+自分のマシンに環境を構築することでこの制約を取り除くことができます
 - ネットワークに繋がっていなくても実行できるようになります
 - 高性能なGPUがあればColabよりもかなり実行時間を削減できます
 
-自宅などのマシンに独自の環境を構築して利用するには、次を参考にチャレンジしてください
+高性能なGPUを所持しており、自宅や研究室などのマシンに独自の環境を構築して利用するには、次を参考にチャレンジしてください
 - 特に困らないであろうというところは、説明を省略しています。
+- 相応のマシン管理、Linuxの知識が必要です
 
-- WindowsかUbuntu PCを準備
-- Windowsの場合は以下の通りにインストール
-  - WSL2 Ubuntu-20.04 LTSのインストール
-Windowsマークを右クリック→Windowsターミナル（管理者）を立ち上げ、以下のコマンドラインからWSL2 Ubuntu-20.04 LTSをインストール 
+なお、下記はWindows WSLとUbuntu環境について記述しています
+- これらは推奨環境です
+- Windows上で動作するAnacondaを利用して構築することもできます
+ - 推奨ではありませんが、以下を参考にしてトライしてみてください
+
+### CUDAのインストール
+
+インストール作業は、慣れない場合ほぼ丸一日作業となりますので注意してください
+
+WindowsかUbuntu PCを準備します 
+- 絶対的にUbuntuをお勧めします
+  - Windowsは、特に新しいGPUの場合いばらの道です
+- CuDNNのインストール  
+  NVIDIAのCuDNNダウンロードサイトをブラウザで開き、I Agree～にチェックを入れ、CUDA 11.xを選択  
+  それぞれの環境に導入してください
+- windowsマシンの場合WSL2をインストールします
+  - WSL2のインストールの詳細は検索して対応してください
+  - Linux 用 Windows サブシステムをONにします
+  - WSL2 Ubuntu-20.04 LTSのインストールします
+    - Windowsマークを右クリック→Windowsターミナル（管理者）を立ち上げ、以下のコマンドラインからWSL2 Ubuntu-20.04 LTSをインストール  
 > wsl --install -d Ubuntu-20.04 
-  - NVIDIAドライバのインストール
-NVIDIAのダウンロードサイトから、windows->x86_64->11->exe を選択してダウンロード 
-  - コマンドラインに以下をいれて動作を確認
+  - NVIDIAドライバのインストール  
+    - NVIDIAのダウンロードサイトから、windows->x86_64->11->exe を選択してダウンロードしてインストール
+    - CUDA ToolkitとCUDNNをNVIDIA 公式の手順や検索情報を参考にインストール
+  - コマンドラインに以下をいれて動作を確認  
 > nvidia-smi 
-  - WSLの自動インストーラで一式導入するため、WSLのshellを起動 
-> git clone https://github.com/tak6uch1/wsl2_pytorch_tf_gpu.git 
-> cd wsl2_pytorch_tf_gpu 
-> bash 1_install_cuda.sh 
-  - CuDNNのインストール
-NVIDIAのCuDNNダウンロードサイトをブラウザで開き、I Agree～にチェックを入れ、CUDA 11.5を選択 
- 
-Local Installer for Ubuntu20.04 x86_64[Deb] をダウンロード 
-ダウンロードフォルダにcudnn-local-repo-ubuntu2004-8.3.2.44_1.0-1_amd64.debがダウンロードされる 
-
-  - wsl2_pytorch_tf_gpuに移動して3_install_cudnn.shを実行
+  - WSLの自動インストーラで一式導入するため、WSLのshellを起動  
+> git clone https://github.com/tak6uch1/wsl2_pytorch_tf_gpu.git  
+> cd wsl2_pytorch_tf_gpu  
+> bash 1_install_cuda.sh  
+  - Windows上のブラウザでLocal Installer for Ubuntu20.04 x86_64[Deb] をダウンロード  
+  ダウンロードフォルダにcudnn-local-repo-ubuntu2004-8.3.2.44_1.0-1_amd64.debがダウンロードされる 
+  - wsl2_pytorch_tf_gpuに移動して3_install_cudnn.shを実行  
+  次のようにするとよいでしょう  
 ```
 mv /mnt/c/Users/user_name/Downloads/cudnn-local-repo-ubuntu2004-8.3.2.44_1.0-1_amd64.deb .
 bash 2_install_cudnn.sh
 ```
-  - Anacondaのインストール
-Anacondaのサイトからインストール用スクリプトをダウンロード 
-Linux 64-Bit(x86) Installer を選択 
-  - インストール用スクリプトを実行
-bash /mnt/c/Users/user_name/Downloads/Anaconda3-2021.11-Linux-x86_64.sh 
-user_nameは自身のアカウント名で置き換えること
-  - Anacondaインストーラが~/.bashrcに設定を追記するため、sourceする
+  - ここまででWSLのシェルを起動し`nvidia-smi`としてGPUが認識されていれば成功です
+- Linuxマシンの場合
+  - NVIDIAドライバーを導入  
+```
+sudo add-apt-repository ppa:graphics-drivers/ppa (新しいGPUなどドライバが見つからない場合)
+sudo apt update
+sudo apt install ubuntu-drivers-common
+```
+狙ったバージョンを導入するなら  
+`ubuntu-drivers devices`としてrecommended付を指定し、例えば`sudo apt install nvidia-driver-nnn`としてインストール
+再起動
+sudo reboot
+
+### Anacondaのインストール
+ここから先はWindowsのWSLとLinux Ubuntuで共通です
+- Anacondaのサイトからインストール用スクリプトをダウンロード 
+  - Linux 64-Bit(x86) Installer を選択 
+- インストール用スクリプトを実行、誰々は自身のアカウント名に変更  
+```
+bash /mnt/c/Users/誰々/Downloads/Anaconda3-2021.11-Linux-x86_64.sh 
+```
+- Anacondaインストーラが~/.bashrcに設定を追記するため、sourceする
+```
 source ~/.bashrc
-  - Tensorflow
-Anacondaをインストールするとcondaコマンドが使えるようになる 
-Tensorflow用の仮想環境をpython 3.8でtfとして作成し、アクティベート 
-```
-conda create -n tf python=3.8
-conda activate tf
-```
-- Ubuntuへの導入
-  - Cuda Toolkitをインストール
-
-基本最新版で問題ありません。
-
-  - cuDNNをインストール
-
-こちらも問題ないはずです。アーキテクチャにより若干インストールの方法が違うようです。
-
-  - Anacondaをインストール
-
-これも問題ないはずです。
-
-- 以降、Windows、Ubuntu共通で、まずAnaconda Navigatorを起動するなどして、新たな環境を構築
-
-要するに、conda create するということです。
-
-- Anaconda環境を更新する
-
-```
-conda config --set ssl_verify no
-conda config --set allow_conda_downgrades true
-conda update -y conda
-conda install -y anaconda
-conda update -y --all
 ```
 
-- Pytorhをインストールする
-
-toolkitバージョンはpytorthのホームページで確認してください
+Anaconda環境を更新します
+- しばらく利用すると更新が必要になることもあります
+- 以下の方法は、あとから再実行して更新することができます
+- ただし、一度動く環境が構築できた場合は、むやみに更新するとトラブル発生の原因になります
 ```
-Linux
-conda install -y pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch -c nvidia
+conda update -n base conda
+conda install anaconda
+conda update --all
+```
+
+最後に、授業で使う環境(名前はなんでもよいがlecture-ml > lecml)を作成します
+```
+conda create -n lecml
+```
+以降、授業の内容を扱う時は最初に、  
+```
+conda activate lecml
+```
+として始めることになります  
+なお、`conda info -e`とすると、作った環境の一覧を見ることができます
+
+### Pytorhをインストールする
+まずはpytorchのホームぺージ(https://pytorch.org/)に行きます
+toolkitはCUDAバージョンを指定してインストールします
+- バージョンは`nvidia-smi`の右上に表示されます
+- 基本的には最新版を導入しますが、下記動作確認で失敗するようであればNightlyを導入する必要があるかもしれません
+  - 当方の環境はNightlyが必要でしたが、普通はstableを利用してください
+- かなり時間がかかります
+```
+conda install -y pytorch torchvision torchaudio cudatoolkit=11.x -c pytorch -c nvidia
 もしくは
-conda install -y pytorch torchvision torchaudio cudatoolkit=11.6 -c pytorch -c conda-forge
-Windows
-conda install -y pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch -c pytorch
-もしくは
-conda install -y pytorch torchvision torchaudio cudatoolkit=11.6 -c pytorch -c conda-forge
-#(バージョンによってはこちらだがお勧めしない) conda install -y pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch -c conda-forge
+conda install -y pytorch torchvision torchaudio cudatoolkit=11.x -c pytorch -c conda-forge
 ```
-導入したら、次で動作を確認
+ですが、今トライしているということは、比較的新しいGPUを持っているのではないかと思います  
+その場合は、Torch NightlyというPreview版が必要になる場合があります(3090は2022年9月時点でも必要です) 
+- 3090などsm_86アーキテクチャは11.6からサポートとなっています
+
+```
+conda install pytorch torchvision torchaudio pytorch-cuda=11.x -c pytorch-nightly -c nvidia
+```
+となります
+
+導入したら、次で動作を確認  
 ```
 python
 >>> import torch
+>>> print(torch.cuda.is_available)
+<function is_available at 0x7fcd1fc94820>
 >>> print(torch.cuda.is_available())
 True
+>>> print(torch.cuda.get_device_name())
+NVIDIA GeForce RTX 3090
+>>> print(torch.version.cuda)
+11.6
+>>> print(torch.cuda.get_arch_list())
+['sm_37', 'sm_50', 'sm_60', 'sm_61', 'sm_70', 'sm_75', 'sm_80', 'sm_86', 'compute_37']
+>>>
 ```
-最後にTrueと出ればOK、出ない場合は、頑張って解決しましょう  
+などとなりますが、まず最初にTrueと出ればOK、出ない場合は、頑張って解決しましょう  
 例えば、間違ってcpu版が入っている可能性があります
 
-- Jupyter Notebookをインストール
+最後の一覧に、所有しているGPUのアーキテクチャが含まれていれば、サポートされています
+- なくても動作していましたし、それなりに計算速度も速くなるようです
 
+### Jupyter Notebookをインストール
+Google Colaboratoryと協調動作させることや、Colabなしでもテキストの閲覧と実行ができるようになります  
 ```
 pip install jupyter
 pip install --upgrade jupyter_http_over_ws
@@ -242,64 +286,77 @@ jupyter serverextension enable --py jupyter_http_over_ws
 jupyter nbextension enable --py widgetsnbextension
 ```
 
-- 授業で利用するライブラリをインストール
+### 授業で利用するライブラリをインストール  
+#### condaで普通に導入
+なお、condaで入れていますが、-c conda-forge オプションが必要な場合もあります  
+`Solving environment: failed with initial frozen solve. Retrying with flexible solve.`と表示され、多くの場合かなり待たされます
+- さらに待っても解決しない可能性が高いです  
+- この場合、baseでconda update condaとしてcondaを更新するのも一つの手ですが、環境は人によって異なるため、とにかくもがいてください
+- 一応内容ごと関係するものでまとめていますが、どのように導入しても問題ありません
+```
+conda install -y numpy pandas matplotlib
+conda install -y scikit-learn scikit-learn-intelex scikit-image
+conda install -y python-graphviz pydotplus
+conda install -y seaborn missingno lxml
+conda install -y lightgbm xgboost
+conda install -y ipywidgets
+conda install -y requests beautifulsoup4
+conda install -y gensim keras
+```
+つまり、とにかく時間がかかるので、全てまとめて実行して放置するのも手ですね
 
 ```
-conda install -y numpy
-conda install -y pandas
-conda install -y cudatoolkit
-conda install -y cudnn
-conda install -y keras
-conda install -y scikit-learn scikit-learn-intelex
-conda install -y scikit-image
-conda install -y matplotlib
-conda install -y python-graphviz
-conda install -y pydotplus
-conda install -y seaborn
-conda install -y missingno
-conda install -y lxml
+conda install -y numpy pandas matplotlib scikit-learn scikit-learn-intelex scikit-image python-graphviz pydotplus  seaborn missingno lxml lightgbm xgboost ipywidgets requests beautifulsoup4 gensim keras
+```
+とやっても大丈夫、ということです
+
+#### conda-forgeを利用して導入
+確認において、conda-forgeの利用が必要なライブラリは以下の通りです
+- かなり先で使いますので無理にインストールする必要はありません
+```
+conda install -y -c conda-forge librosa
 ```
 
+#### pipを利用して導入
 - OpenCVをインストール
-
-ちょっと大物なので、分けています  
-conda install opencv はうまくいかない場合次のようにするとよいでしょう
-
+今は、これで入るはずです
 ```
 pip install opencv-python
+```
+
+なお、以下の方法もありますが、不要のはずです
+```
+conda install opencv こちらが上手くいかない場合は、conda-forgeで
 conda install -y -c conda-forge opencv
-conda install -y -c conda-forge librosa
-conda install -y -c conda-forge lightgbm
-conda install -y -c conda-forge xgboost
-conda install -y -c conda-forge ipywidgets
-conda install -y -c conda-forge gensim
 ```
 
-- そのほかの関連ライブラリをインストール
-
+#### 言語処理系ライブラリ
+- pytorch関連
 ```
-Linux
+pip install torchdata torchtext
+```
+- mecab関連  
+ほぼ役割を終えましたが…
+```
 conda install -y -c conda-forge mecab
-Windows
-conda install -y -c mzh mecab-python3
-
-pip install requests beautifulsoup4
 ```
-- さらに次も自然言語処理で利用します
+さらに次も必要です
 ```
-apt install libmecab-dev mecab mecab-ipadic-utf8
+sudo apt install libmecab-dev mecab-ipadic-utf8
 pip install mecab-python3
 ln -s /etc/mecabrc /usr/local/etc/mecabrc
 ```
+- テキストの中も相当数追加していますので注意してください
 
-なお、次が必要となる場合もあります。
+#### その他
+-  次が必要となる場合もあります。
 ```
 pip install --upgrade numpy
 ```
 
 - tensorflowを入れる
-
-これが、pythonのバージョン整合が厳しく、失敗することが比較的多いです。なお、Windows11 のWSL環境では、問題なくインストール可能です。
+これが、pythonのバージョン整合が厳しく、失敗することもあります  
+さらに、tensorflowを入れることで、pytorchのアーキテクチャサポートが制限されるという現象から、tensorflow用の環境を別途clone作成してからインストールすることをお勧めします
 ```
 conda install -y tensorflow-gpu tensorflow-datasets tensorflow-hub
 ```
@@ -307,11 +364,12 @@ conda install -y tensorflow-gpu tensorflow-datasets tensorflow-hub
 ```
 conda install -y tensorflow-gpu tensorflow-datasets tensorflow-hub -c conda-forge
 ```
-で入る場合もあります。なお、tensorflow-gpuさえ入ればなんとかなります。
+で入る場合もあります  
+なお、tensorflow-gpuさえ入ればなんとかなります
 
-- quiltを入れる
-
-これも、pythonのバージョンに厳しく、新しいpythonではインストールできないようです。といっても、利用するのは一か所だけなので、なくても大丈夫です。
+- 以下は対策して不要としています
+  - quilt
+これも、pythonのバージョンに厳しく、インストールが難しくなりつつあります
 ```
 conda install -y -c conda-forge quilt
 quilt install --force ResidentMario/missingno_data
@@ -358,7 +416,7 @@ jupyter notebook --no-browser --NotebookApp.allow_origin='https://colab.research
 ```
 なお、この仕様は近々変更される予定で、
 ```
-jupyter notebook --no-browser --ServerApp.allow_origin='https://colab.research.google.com' --port=8888 --ServerApp.port_retries=0 --allow-root --ip=0.0.0.0 --NotebookApp.token=''
+jupyter notebook --no-browser --App.allow_origin='https://colab.research.google.com' --port=8888 --ServerApp.port_retries=0 --allow-root --ip=0.0.0.0 --NotebookApp.token=''
 ```
 とする必要があるかもしれません
 
@@ -371,3 +429,20 @@ jupyter notebook --no-browser --ServerApp.allow_origin='https://colab.research.g
 http://localhost:8888/ バックエンドに指定されているはずですので、そのまま接続とします
 
 これで、 Google Coalbを利用せず、自分の環境を利用するようになります。全ての制限が外れます。つまり、利用時間やセッションの制限はなくなり、ファイルが消えることもありません
+
+## 注意
+
+一度動く環境ができたら、その環境を維持するため、`conda update --all`すらも避けるべきです
+- これで壊してしまった経験が何度かあります
+```
+conda create -n copyenv --clone originenv
+```
+として、環境をコピーしてから始めるとよいです
+
+その他、よく使うコマンドを紹介しておきます
+- `conda info -e`: 作った環境の一覧を表示
+- `conda create -n test`: testという名前の環境を作成
+- `conda remove -n test --all`: testという環境を削除
+- `conda create -n myenv python=3.7`: Python バージョンを指定して作成
+- `conda activate test`: 環境testの有効化
+- `conda deactivate`: 環境の無効化
