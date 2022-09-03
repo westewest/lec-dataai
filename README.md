@@ -158,7 +158,9 @@
 
 インストール作業は、慣れない場合ほぼ丸一日作業となりますので注意してください
 
-WindowsかUbuntu PCを準備します  
+WindowsかUbuntu PCを準備します 
+- 絶対的にUbuntuをお勧めします
+  - Windowsは、特に新しいGPUの場合いばらの道です
 - CuDNNのインストール  
   NVIDIAのCuDNNダウンロードサイトをブラウザで開き、I Agree～にチェックを入れ、CUDA 11.xを選択  
   それぞれの環境に導入してください
