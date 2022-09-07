@@ -10,8 +10,7 @@ device = "cuda"
 
 #prompt = "a photo of an astronaut riding a horse on mars"
 #prompt = "a drive recorder footage of a monster"
-#prompt = "a photograph of cat on a roof under fullmoon"
-prompt = "a photograph of a cat having trouble on the toilet"
+prompt = "a photograph of cat on a roof under fullmoon"
 num_of_fig = 6
 
 pipe = StableDiffusionPipeline.from_pretrained(model_id, use_auth_token=True)
