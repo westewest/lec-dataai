@@ -280,7 +280,7 @@ NVIDIA GeForce RTX 3090
 ### Jupyter Notebookをインストール
 Google Colaboratoryと協調動作させることや、Colabなしでもテキストの閲覧と実行ができるようになります  
 ```
-pip install jupyter
+conda install jupyter
 pip install --upgrade jupyter_http_over_ws
 jupyter serverextension enable --py jupyter_http_over_ws
 jupyter nbextension enable --py widgetsnbextension
@@ -289,26 +289,13 @@ jupyter nbextension enable --py widgetsnbextension
 ### 授業で利用するライブラリをインストール  
 #### condaで普通に導入
 なお、condaで入れていますが、-c conda-forge オプションが必要な場合もあります  
-`Solving environment: failed with initial frozen solve. Retrying with flexible solve.`と表示され、多くの場合かなり待たされます
-- さらに待っても解決しない可能性が高いです  
-- この場合、baseでconda update condaとしてcondaを更新するのも一つの手ですが、環境は人によって異なるため、とにかくもがいてください
-- 一応内容ごと関係するものでまとめていますが、どのように導入しても問題ありません
-```
-conda install -y numpy pandas matplotlib
-conda install -y scikit-learn scikit-learn-intelex scikit-image
-conda install -y python-graphviz pydotplus
-conda install -y seaborn missingno lxml
-conda install -y lightgbm xgboost
-conda install -y ipywidgets
-conda install -y requests beautifulsoup4
-conda install -y gensim keras
-```
-つまり、とにかく時間がかかるので、全てまとめて実行して放置するのも手ですね
-
+まずは、次で一気にいれてみます
 ```
 conda install -y numpy pandas matplotlib scikit-learn scikit-learn-intelex scikit-image python-graphviz pydotplus  seaborn missingno lxml lightgbm xgboost ipywidgets requests beautifulsoup4 gensim keras
 ```
-とやっても大丈夫、ということです
+もし、問題が発生するか、`Solving environment: failed with initial frozen solve. Retrying with flexible solve.`と表示され、多くの場合かなり待たされた場合は、さらに待っても解決しない可能性が高いです  
+- このような場合、baseでconda update condaとしてcondaを更新するのも一つの手ですが、環境は人によって異なるため、とにかくもがいてください
+- 問題が解決しない場合、anacondaをきれいに最初から入れなおすのが良いと思います
 
 #### conda-forgeを利用して導入
 確認において、conda-forgeの利用が必要なライブラリは以下の通りです
