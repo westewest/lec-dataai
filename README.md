@@ -317,8 +317,14 @@ conda install opencv こちらが上手くいかない場合は、conda-forgeで
 conda install -y -c conda-forge opencv
 ```
 
+ここまでインストールしたら、次の作業が2022.9時点で問題となる可能性が高く、環境を複製しておくことをお勧めします
+```
+conda create -n lecmlbk --clone lecml
+```
+
 #### 言語処理系ライブラリ
 - pytorch関連
+  - 2022年9月時点で、最新のGPU(3090系など)を利用している場合、インストールにより必要な`sm_84`未対応のグレードダウンしたpytorchがインストールされますので、避けた方がよく、その場合テキストの一部で動作できない記述が発生します
 ```
 pip install torchdata torchtext
 ```
