@@ -52,6 +52,7 @@
 下記のColabのリンクをクリックすると、Colabを開くことができます
 - 開いた後、必ず「ノートブックの保存」を行い、自身のGoogle Drive内部に保存してください
 
+----
 - 1-準備  
 [![dataai-text-1-準備.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-1-準備.ipynb)
 - 2-ML基礎  
