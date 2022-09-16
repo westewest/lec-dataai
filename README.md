@@ -54,85 +54,58 @@
 
 - 1-準備  
 [![dataai-text-1-準備.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-1-準備.ipynb)
-
 - 2-ML基礎  
 [![dataai-text-2-ML基礎.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-2-ML基礎.ipynb)
-
 - 2-ML基礎-補助  
 [![dataai-text-2-ML基礎-補助.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-2-ML基礎-補助.ipynb)
-
 - 2-python復習  
 [![dataai-text-2-python復習.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-2-python復習.ipynb)
-
 - 3-データの扱い  
 [![dataai-text-3-データの扱い.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-3-データの扱い.ipynb)
-
 - 4-MLライブラリの基礎  
 [![dataai-text-4-MLライブラリの基礎.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-4-MLライブラリの基礎.ipynb)
-
 - 5-Sklearn-まとめ  
 [![dataai-text-5-Sklearn-まとめ.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-5-Sklearn-まとめ.ipynb)
-
 - 6-ニューラルネットワークの基礎  
 [![dataai-text-6-ニューラルネットワークの基礎.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-6-ニューラルネットワークの基礎.ipynb)
-
 - 7-PyTorch  
 [![dataai-text-7-PyTorch.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-7-PyTorch.ipynb)
-
 - 8-PyTorch-Basics  
 [![dataai-text-8-PyTorch-Basics.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-8-PyTorch-Basics.ipynb)
-
 - 9-PyTorch-CNN  
 [![dataai-text-9-PyTorch-CNN.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-9-PyTorch-CNN.ipynb)
-
 - A-PyTorch-RNN  
 [![dataai-text-A-PyTorch-RNN.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-A-PyTorch-RNN.ipynb)
-
 - B-PyTorch-AutoEncoder  
 [![dataai-text-B-PyTorch-AutoEncoder.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-B-PyTorch-AutoEncoder.ipynb)
-
 - C-PyTorch-転移学習  
 [![dataai-text-C-PyTorch-転移学習.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-C-PyTorch-転移学習.ipynb)
-
 - D-PyTorch-強化学習  
 [![dataai-text-D-PyTorch-強化学習.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-D-PyTorch-強化学習.ipynb)
-
 - E-PyTorch-説明可能AI  
 [![dataai-text-E-PyTorch-説明可能AI.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-E-PyTorch-説明可能AI.ipynb)
-
 - F-PyTorch-GAN-1  
 [![dataai-text-F-PyTorch-GAN.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-F-PyTorch-GAN-1.ipynb)
-
 - F-PyTorch-GAN-2  
 [![dataai-text-F-PyTorch-GAN.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-F-PyTorch-GAN-2.ipynb)
-
 - G-PyTorch-NLP-1-Basics  
 [![dataai-text-G-PyTorch--NLP-1-Basics.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-G-PyTorch-NLP-1-Basics.ipynb)
-
 - G-PyTorch-NLP-2-S2SAtten  
 [![dataai-text-G-PyTorch--NLP-2-S2SAtten.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-G-PyTorch--NLP-2-S2SAtten.ipynb)
-
 - G-PyTorch-NLP-3-Transformer  
 [![dataai-text-G-PyTorch-NLP-3-Transformer.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-G-PyTorch-NLP-3-Transformer.ipynb)
-  
 - G-PyTorch-NLP-4-BERT  
 [![dataai-text-G-PyTorch-NLP-4-BERT.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-G-PyTorch-NLP-4-BERT.ipynb)
-
 - H-PyTorch-音声識別  
 [![dataai-text-H-PyTorch-音声識別.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-H-PyTorch-音声識別.ipynb)
-
 - I-PyTorch-StyleGAN-1  
 [![dataai-text-I-StyleGAN-1.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-I-PyTorch-StyleGAN-1.ipynb)
-
 - I-PyTorch-StyleGAN-2  
 [![dataai-text-I-StyleGAN-2.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-I-PyTorch-StyleGAN-2.ipynb)
-
 - I-PyTorch-StyleGAN-3  
 [![dataai-text-I-StyleGAN-3.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-I-PyTorch-StyleGAN-3.ipynb)
-
 - J-PyTorch-Diffusion  
 [![dataai-text-I-StyleGAN-3.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-J-PyTorch-Diffusion.ipynb)
-
 ----
 
 ## 個人PCへのCUDA環境の構築について
