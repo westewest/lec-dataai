@@ -41,10 +41,9 @@
 
 ## 個人環境の利用について
 - 個人で専用のGPUマシンを揃えたうえで、Colab同様の環境を個人で構築して利用することができます
-  - 能力次第でColabを利用せずに履修できますが、GPU環境の利用を必須とします
-  - 構築そのものは自己責任で行って下さい
-  - 授業としては構築サポートは行いません
-  - 但し、構築に関する質問があれば、可能な範囲で対応します
+  - 能力次第でColabを利用せずに履修できますが、ここに記載するノートブックが実行可能なGPU環境の利用を必須とします
+  - 授業内容としてサポートするのは、Colabのみであり、個人環境構築そのものは自己責任で行って下さい
+  - 但し、個人構築に関する質問があれば、可能な範囲で対応します
 - 互換性の問題による不具合・不利益は免責とします
   - 個人環境構築はいばらの道ですが、構築して利用した場合、最終評価で採点上考慮することがあります
   - 新たにGPU対応のPC、高価なGPUを購入するのは無意味で、Colabを使った方がよいです
@@ -53,97 +52,73 @@
 下記のColabのリンクをクリックすると、Colabを開くことができます
 - 開いた後、必ず「ノートブックの保存」を行い、自身のGoogle Drive内部に保存してください
 
+----
 - 1-準備  
 [![dataai-text-1-準備.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-1-準備.ipynb)
-
 - 2-ML基礎  
 [![dataai-text-2-ML基礎.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-2-ML基礎.ipynb)
-
 - 2-ML基礎-補助  
 [![dataai-text-2-ML基礎-補助.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-2-ML基礎-補助.ipynb)
-
 - 2-python復習  
 [![dataai-text-2-python復習.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-2-python復習.ipynb)
-
 - 3-データの扱い  
 [![dataai-text-3-データの扱い.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-3-データの扱い.ipynb)
-
 - 4-MLライブラリの基礎  
 [![dataai-text-4-MLライブラリの基礎.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-4-MLライブラリの基礎.ipynb)
-
 - 5-Sklearn-まとめ  
 [![dataai-text-5-Sklearn-まとめ.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-5-Sklearn-まとめ.ipynb)
-
 - 6-ニューラルネットワークの基礎  
 [![dataai-text-6-ニューラルネットワークの基礎.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-6-ニューラルネットワークの基礎.ipynb)
-
 - 7-PyTorch  
 [![dataai-text-7-PyTorch.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-7-PyTorch.ipynb)
-
 - 8-PyTorch-Basics  
 [![dataai-text-8-PyTorch-Basics.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-8-PyTorch-Basics.ipynb)
-
 - 9-PyTorch-CNN  
 [![dataai-text-9-PyTorch-CNN.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-9-PyTorch-CNN.ipynb)
-
 - A-PyTorch-RNN  
 [![dataai-text-A-PyTorch-RNN.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-A-PyTorch-RNN.ipynb)
-
 - B-PyTorch-AutoEncoder  
 [![dataai-text-B-PyTorch-AutoEncoder.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-B-PyTorch-AutoEncoder.ipynb)
-
 - C-PyTorch-転移学習  
 [![dataai-text-C-PyTorch-転移学習.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-C-PyTorch-転移学習.ipynb)
-
 - D-PyTorch-強化学習  
 [![dataai-text-D-PyTorch-強化学習.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-D-PyTorch-強化学習.ipynb)
-
 - E-PyTorch-説明可能AI  
 [![dataai-text-E-PyTorch-説明可能AI.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-E-PyTorch-説明可能AI.ipynb)
-
 - F-PyTorch-GAN-1  
 [![dataai-text-F-PyTorch-GAN.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-F-PyTorch-GAN-1.ipynb)
-
 - F-PyTorch-GAN-2  
 [![dataai-text-F-PyTorch-GAN.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-F-PyTorch-GAN-2.ipynb)
-
 - G-PyTorch-NLP-1-Basics  
 [![dataai-text-G-PyTorch--NLP-1-Basics.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-G-PyTorch-NLP-1-Basics.ipynb)
-
 - G-PyTorch-NLP-2-S2SAtten  
 [![dataai-text-G-PyTorch--NLP-2-S2SAtten.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-G-PyTorch--NLP-2-S2SAtten.ipynb)
-
 - G-PyTorch-NLP-3-Transformer  
 [![dataai-text-G-PyTorch-NLP-3-Transformer.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-G-PyTorch-NLP-3-Transformer.ipynb)
-  
 - G-PyTorch-NLP-4-BERT  
 [![dataai-text-G-PyTorch-NLP-4-BERT.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-G-PyTorch-NLP-4-BERT.ipynb)
-
 - H-PyTorch-音声識別  
 [![dataai-text-H-PyTorch-音声識別.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-H-PyTorch-音声識別.ipynb)
-
 - I-PyTorch-StyleGAN-1  
 [![dataai-text-I-StyleGAN-1.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-I-PyTorch-StyleGAN-1.ipynb)
-
 - I-PyTorch-StyleGAN-2  
 [![dataai-text-I-StyleGAN-2.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-I-PyTorch-StyleGAN-2.ipynb)
-
 - I-PyTorch-StyleGAN-3  
 [![dataai-text-I-StyleGAN-3.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-I-PyTorch-StyleGAN-3.ipynb)
-
 - J-PyTorch-Diffusion  
 [![dataai-text-I-StyleGAN-3.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-J-PyTorch-Diffusion.ipynb)
-
 ----
 
-## CUDA環境の構築について
+## 個人PCへのCUDA環境の構築について
 
 テキストは、すべてGoogle Colaboratory上で実行することを想定しています
 
-しかしながら、Colabを利用すると様々な制約があることも事実です  
-自分のマシンに環境を構築することでこの制約を取り除くことができます
+しかしながら、Colabを利用すると様々な制約があることも事実です
+- 例えば、実行時間やブラウザを閉じることができないなど
+自分のマシンに環境を構築することでこれらの制約を取り除くことができます
 - ネットワークに繋がっていなくても実行できるようになります
 - 高性能なGPUがあればColabよりもかなり実行時間を削減できます
+- 繰り返しますがいばらの道です
 
 高性能なGPUを所持しており、自宅や研究室などのマシンに独自の環境を構築して利用するには、次を参考にチャレンジしてください
 - 特に困らないであろうというところは、説明を省略しています。
@@ -159,8 +134,8 @@
 インストール作業は、慣れない場合ほぼ丸一日作業となりますので注意してください
 
 WindowsかUbuntu PCを準備します 
-- 絶対的にUbuntuをお勧めします
-  - Windowsは、特に新しいGPUの場合いばらの道です
+- Ubuntu環境を用いて構築することを強くお勧めします
+  - Windowsは、特に新しいGPUの場合は、さらに険しい道となります
 - CuDNNのインストール  
   NVIDIAのCuDNNダウンロードサイトをブラウザで開き、I Agree～にチェックを入れ、CUDA 11.xを選択  
   それぞれの環境に導入してください
@@ -189,6 +164,8 @@ bash 2_install_cudnn.sh
 ```
   - ここまででWSLのシェルを起動し`nvidia-smi`としてGPUが認識されていれば成功です
 - Linuxマシンの場合
+  - Ubuntuの利用を推奨します
+    - Ubuntu20.04、22.04いずれも問題ありません
   - NVIDIAドライバーを導入  
 ```
 sudo add-apt-repository ppa:graphics-drivers/ppa (新しいGPUなどドライバが見つからない場合)
@@ -280,7 +257,7 @@ NVIDIA GeForce RTX 3090
 ### Jupyter Notebookをインストール
 Google Colaboratoryと協調動作させることや、Colabなしでもテキストの閲覧と実行ができるようになります  
 ```
-pip install jupyter
+conda install jupyter
 pip install --upgrade jupyter_http_over_ws
 jupyter serverextension enable --py jupyter_http_over_ws
 jupyter nbextension enable --py widgetsnbextension
@@ -289,26 +266,13 @@ jupyter nbextension enable --py widgetsnbextension
 ### 授業で利用するライブラリをインストール  
 #### condaで普通に導入
 なお、condaで入れていますが、-c conda-forge オプションが必要な場合もあります  
-`Solving environment: failed with initial frozen solve. Retrying with flexible solve.`と表示され、多くの場合かなり待たされます
-- さらに待っても解決しない可能性が高いです  
-- この場合、baseでconda update condaとしてcondaを更新するのも一つの手ですが、環境は人によって異なるため、とにかくもがいてください
-- 一応内容ごと関係するものでまとめていますが、どのように導入しても問題ありません
-```
-conda install -y numpy pandas matplotlib
-conda install -y scikit-learn scikit-learn-intelex scikit-image
-conda install -y python-graphviz pydotplus
-conda install -y seaborn missingno lxml
-conda install -y lightgbm xgboost
-conda install -y ipywidgets
-conda install -y requests beautifulsoup4
-conda install -y gensim keras
-```
-つまり、とにかく時間がかかるので、全てまとめて実行して放置するのも手ですね
-
+まずは、次で一気にいれてみます
 ```
 conda install -y numpy pandas matplotlib scikit-learn scikit-learn-intelex scikit-image python-graphviz pydotplus  seaborn missingno lxml lightgbm xgboost ipywidgets requests beautifulsoup4 gensim keras
 ```
-とやっても大丈夫、ということです
+もし、問題が発生するか、`Solving environment: failed with initial frozen solve. Retrying with flexible solve.`と表示され、多くの場合かなり待たされた場合は、さらに待っても解決しない可能性が高いです  
+- このような場合、baseでconda update condaとしてcondaを更新するのも一つの手ですが、環境は人によって異なるため、とにかくもがいてください
+- 問題が解決しない場合、anacondaをきれいに最初から入れなおすのが良いと思います
 
 #### conda-forgeを利用して導入
 確認において、conda-forgeの利用が必要なライブラリは以下の通りです
@@ -330,8 +294,14 @@ conda install opencv こちらが上手くいかない場合は、conda-forgeで
 conda install -y -c conda-forge opencv
 ```
 
+ここまでインストールしたら、次の作業が2022.9時点で問題となる可能性が高く、環境を複製しておくことをお勧めします
+```
+conda create -n lecmlbk --clone lecml
+```
+
 #### 言語処理系ライブラリ
 - pytorch関連
+  - 2022年9月時点で、最新のGPU(3090系など)を利用している場合、インストールにより必要な`sm_84`未対応のグレードダウンしたpytorchがインストールされますので、避けた方がよく、その場合テキストの一部で動作できない記述が発生します
 ```
 pip install torchdata torchtext
 ```
@@ -344,18 +314,14 @@ conda install -y -c conda-forge mecab
 ```
 sudo apt install libmecab-dev mecab-ipadic-utf8
 pip install mecab-python3
-ln -s /etc/mecabrc /usr/local/etc/mecabrc
+sudo ln -s /etc/mecabrc /usr/local/etc/mecabrc
 ```
 - テキストの中も相当数追加していますので注意してください
 
 #### その他
--  次が必要となる場合もあります。
-```
-pip install --upgrade numpy
-```
 
 - tensorflowを入れる
-これが、pythonのバージョン整合が厳しく、失敗することもあります  
+これが、pythonのバージョン整合が厳しく、失敗することもありますが、授業では特に必須ではないためスキップしても構いません  
 さらに、tensorflowを入れることで、pytorchのアーキテクチャサポートが制限されるという現象から、tensorflow用の環境を別途clone作成してからインストールすることをお勧めします
 ```
 conda install -y tensorflow-gpu tensorflow-datasets tensorflow-hub
@@ -374,6 +340,15 @@ conda install -y tensorflow-gpu tensorflow-datasets tensorflow-hub -c conda-forg
 conda install -y -c conda-forge quilt
 quilt install --force ResidentMario/missingno_data
 ```
+
+#### 最後に
+
+ここまでインストールしたら、この環境を壊さないように、バックアップを取得しておきましょう
+- 動作しなくなったら、こちらで取得したlecmlbkというバックアップをリストアして利用するとよいです
+```
+conda create -n lecmlbk --clone lecml
+```
+
 
 - おまけ
 
