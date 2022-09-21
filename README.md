@@ -4,8 +4,6 @@
 [![HIT-Academy](https://img.shields.io/badge/Slack-hitacademy--ml-3f0f40.svg?style=flat)](https://hitacademy-ml.slack.com/)
 
 # 「データシステムの知能化とデザイン」レクチャーノートブック
-## ガイダンス
-https://github.com/keioNishi/lec-dataai/wiki
 
 ## lec-dataai / Lecture Notes for "Design of Systems for Data and Artificial Intelligence"
 - 全体の閲覧とダウンロード
@@ -56,6 +54,8 @@ https://github.com/keioNishi/lec-dataai/wiki
 - 開いた後、必ず「ノートブックの保存」を行い、自身のGoogle Drive内部に保存してください
 
 ----
+- ガイダンス  
+https://github.com/keioNishi/lec-dataai/wiki
 - 1-準備  
 [![dataai-text-1-準備.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-1-準備.ipynb)
 - 2-ML基礎  
