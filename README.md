@@ -167,7 +167,7 @@ sudo reboot #再起動
     - Linux 用 Windows サブシステムをONにします
     - WSL2 Ubuntu-20.04 LTSのインストールします
     - Windowsマークを右クリック→Windowsターミナル（管理者）を立ち上げ、以下のコマンドラインからWSL2 Ubuntu-20.04 LTSをインストール  
-> wsl --install -d Ubuntu-20.04 
+> wsl --install -d Ubuntu-20.04  
   - NVIDIAドライバのインストール  
     - NVIDIAのダウンロードサイトから、windows->x86_64->11->exe を選択してダウンロードしてインストール
     - CUDA ToolkitとCUDNNをNVIDIA 公式の手順や検索情報を参考にインストール
