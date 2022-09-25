@@ -154,7 +154,7 @@ WindowsかUbuntu PCを準備します
 sudo add-apt-repository ppa:graphics-drivers/ppa (新しいGPUなどドライバが見つからない場合)
 sudo apt update
 sudo apt install ubuntu-drivers-common
-```  
+```
 
   - 狙ったバージョンを導入するなら  
       `ubuntu-drivers devices`としてrecommended付を指定し、例えば`sudo apt install nvidia-driver-nnn`としてインストール後再起動`sudo reboot`
