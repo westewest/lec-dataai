@@ -4,6 +4,7 @@
 [![HIT-Academy](https://img.shields.io/badge/Slack-hitacademy--ml-3f0f40.svg?style=flat)](https://hitacademy-ml.slack.com/)
 
 # 「データシステムの知能化とデザイン」レクチャーノートブック
+
 ## lec-dataai / Lecture Notes for "Design of Systems for Data and Artificial Intelligence"
 - 全体の閲覧とダウンロード
   - 左上もしくはこちら[![「データシステムの知能化とデザイン」レクチャーノートブック](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai)のバッジを利用してください
@@ -39,12 +40,18 @@
   - 海外が夜間となる時間帯が空いています
   - 日中混雑して利用できなかったという報告を過去受けておらず、昨年も同様に試験が実施できました
 
+## 授業で推奨する環境について
+- この授業は個人PC上で動作するGoogle Chromeブラウザを利用し、GithubおよびColabにアクセスして履修することを想定しています
+  - この手段のみ動作を保証し、動作しない場合は授業内でその対応を行います
+- Google Chrome以外のブラウザでも動作しますが、ブラウザの差異が動作に影響する可能性は否定できません
+
 ## 個人環境の利用について
 - 個人で専用のGPUマシンを揃えたうえで、Colab同様の環境を個人で構築して利用することができます
-  - 能力次第でColabを利用せずに履修できますが、ここに記載するノートブックが実行可能なGPU環境の利用を必須とします
-  - 授業内容としてサポートするのは、Colabのみであり、個人環境構築そのものは自己責任で行って下さい
-  - 但し、個人構築に関する質問があれば、可能な範囲で対応します
+  - あくまでもColabの利用を推奨し、その上での不具合のみ対応しますが、Colabの制約を開放しGPU処理環境や深層機械学習を設計・実行する個人環境を構築することは極めて大きな意味を持ちます
+  - 努力・能力次第でColabを利用せずに履修できますが、個人でここに記載するノートブックが実行可能なGPU環境を構築して利用することが求められます
+  - 繰り返しとなりますが、授業がサポートするのは、Colabのみであり、個人環境構築そのものは自己責任で行って下さい
 - 互換性の問題による不具合・不利益は免責とします
+  - 個人環境の構築に関する質問は授業の保証範囲外で不具合に対するサポートなどは行いませんが、可能な範囲で対応します
   - 個人環境構築はいばらの道ですが、構築して利用した場合、最終評価で採点上考慮することがあります
   - 新たにGPU対応のPC、高価なGPUを購入するのは無意味で、Colabを使った方がよいです
 
@@ -53,6 +60,8 @@
 - 開いた後、必ず「ノートブックの保存」を行い、自身のGoogle Drive内部に保存してください
 
 ----
+- ガイダンス  
+https://github.com/keioNishi/lec-dataai/wiki
 - 1-準備  
 [![dataai-text-1-準備.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-1-準備.ipynb)
 - 2-ML基礎  
@@ -125,7 +134,7 @@
 - 相応のマシン管理、Linuxの知識が必要です
 
 なお、下記はWindows WSLとUbuntu環境について記述しています
-- これらは推奨環境です
+- Ubuntu(20.04および22.04)の利用を推奨します
 - Windows上で動作するAnacondaを利用して構築することもできます
  - 推奨ではありませんが、以下を参考にしてトライしてみてください
 
@@ -135,47 +144,55 @@
 
 WindowsかUbuntu PCを準備します 
 - Ubuntu環境を用いて構築することを強くお勧めします
-  - Windowsは、特に新しいGPUの場合は、さらに険しい道となります
-- CuDNNのインストール  
-  NVIDIAのCuDNNダウンロードサイトをブラウザで開き、I Agree～にチェックを入れ、CUDA 11.xを選択  
-  それぞれの環境に導入してください
-- windowsマシンの場合WSL2をインストールします
-  - WSL2のインストールの詳細は検索して対応してください
-  - Linux 用 Windows サブシステムをONにします
-  - WSL2 Ubuntu-20.04 LTSのインストールします
-    - Windowsマークを右クリック→Windowsターミナル（管理者）を立ち上げ、以下のコマンドラインからWSL2 Ubuntu-20.04 LTSをインストール  
-> wsl --install -d Ubuntu-20.04 
-  - NVIDIAドライバのインストール  
-    - NVIDIAのダウンロードサイトから、windows->x86_64->11->exe を選択してダウンロードしてインストール
-    - CUDA ToolkitとCUDNNをNVIDIA 公式の手順や検索情報を参考にインストール
-  - コマンドラインに以下をいれて動作を確認  
-> nvidia-smi 
-  - WSLの自動インストーラで一式導入するため、WSLのshellを起動  
-> git clone https://github.com/tak6uch1/wsl2_pytorch_tf_gpu.git  
-> cd wsl2_pytorch_tf_gpu  
-> bash 1_install_cuda.sh  
-  - Windows上のブラウザでLocal Installer for Ubuntu20.04 x86_64[Deb] をダウンロード  
-  ダウンロードフォルダにcudnn-local-repo-ubuntu2004-8.3.2.44_1.0-1_amd64.debがダウンロードされる 
-  - wsl2_pytorch_tf_gpuに移動して3_install_cudnn.shを実行  
-  次のようにするとよいでしょう  
-```
-mv /mnt/c/Users/user_name/Downloads/cudnn-local-repo-ubuntu2004-8.3.2.44_1.0-1_amd64.deb .
-bash 2_install_cudnn.sh
-```
-  - ここまででWSLのシェルを起動し`nvidia-smi`としてGPUが認識されていれば成功です
-- Linuxマシンの場合
+  - Ubuntu以外のLinuxディストリビューションでもインストール可能ですが、インストール方法は各自で確認してください
+  - Windows環境を利用する場合、特に新しいGPUを用いる場合はさらに険しい道となります
+- Linuxマシンへのインストールについて
   - Ubuntuの利用を推奨します
     - Ubuntu20.04、22.04いずれも問題ありません
   - NVIDIAドライバーを導入  
-```
-sudo add-apt-repository ppa:graphics-drivers/ppa (新しいGPUなどドライバが見つからない場合)
-sudo apt update
-sudo apt install ubuntu-drivers-common
-```
-狙ったバージョンを導入するなら  
-`ubuntu-drivers devices`としてrecommended付を指定し、例えば`sudo apt install nvidia-driver-nnn`としてインストール
-再起動
-sudo reboot
+    - 通常は、以下のコマンドを入力して導入してください
+    - もし狙ったバージョンを導入したい場合は、`ubuntu-drivers devices`としてrecommended付を指定し、例えば`sudo apt install nvidia-driver-nnn`としてインストール後再起動`sudo reboot`してください
+
+  ```
+  sudo add-apt-repository ppa:graphics-drivers/ppa #新しいGPUなどドライバが見つからない場合のみ実行
+  sudo apt update
+  sudo apt install ubuntu-drivers-common
+  sudo reboot #再起動
+  ```
+
+- Windowsマシンへのインストールについて
+  - Windows上でNVIDIAのCuDNNダウンロードサイトをブラウザで開き、I Agree～にチェックを入れ、CUDA 11.xを選択して導入してください
+  - WSL2をインストールします  
+    WSL2のインストールの詳細は検索して対応してください
+    - Linux 用 Windows サブシステムをONにします
+    - WSL2 Ubuntu-20.04 LTSのインストールします
+    - Windowsマークを右クリック→Windowsターミナル（管理者）を立ち上げ、以下のコマンドラインからWSL2 Ubuntu-20.04 LTSをインストール  
+  ```
+  wsl --install -d Ubuntu-20.04
+  ```
+  - NVIDIAドライバのインストール  
+    - NVIDIAのダウンロードサイトから、windows->x86_64->11->exe を選択してダウンロードしてインストール
+    - CUDA ToolkitとCUDNNをNVIDIA 公式の手順や検索情報を参考にインストール
+  - WSLの自動インストーラで一式導入するため、WSLのshellを起動  
+  ```
+  git clone https://github.com/tak6uch1/wsl2_pytorch_tf_gpu.git
+  cd wsl2_pytorch_tf_gpu  
+  bash 1_install_cuda.sh
+  ```
+  - Windows上のブラウザでLocal Installer for Ubuntu20.04 x86_64[Deb] をダウンロード  
+    ダウンロードフォルダにcudnn-local-repo-ubuntu2004-8.3.2.44_1.0-1_amd64.debがダウンロードされる 
+  - wsl2_pytorch_tf_gpuに移動して3_install_cudnn.shを実行  
+    次のようにするとよいでしょう  
+  ```
+  mv /mnt/c/Users/user_name/Downloads/cudnn-local-repo-ubuntu2004-8.3.2.44_1.0-1_amd64.deb .
+  bash 2_install_cudnn.sh
+  ```
+
+- インストール環境の確認
+  - コマンドラインに以下をいれて動作を確認してください  
+> nvidia-smi 
+
+以下、Ubuntu、Windows共に共通です
 
 ### Anacondaのインストール
 ここから先はWindowsのWSLとLinux Ubuntuで共通です
