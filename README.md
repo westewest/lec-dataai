@@ -153,12 +153,12 @@ WindowsかUbuntu PCを準備します
     - 通常は、以下のコマンドを入力して導入してください
     - もし狙ったバージョンを導入したい場合は、`ubuntu-drivers devices`としてrecommended付を指定し、例えば`sudo apt install nvidia-driver-nnn`としてインストール後再起動`sudo reboot`してください
 
-```
-sudo add-apt-repository ppa:graphics-drivers/ppa #新しいGPUなどドライバが見つからない場合のみ実行
-sudo apt update
-sudo apt install ubuntu-drivers-common
-sudo reboot #再起動
-```
+  ```
+  sudo add-apt-repository ppa:graphics-drivers/ppa #新しいGPUなどドライバが見つからない場合のみ実行
+  sudo apt update
+  sudo apt install ubuntu-drivers-common
+  sudo reboot #再起動
+  ```
 
 - Windowsマシンへのインストールについて
   - Windows上でNVIDIAのCuDNNダウンロードサイトをブラウザで開き、I Agree～にチェックを入れ、CUDA 11.xを選択して導入してください
@@ -167,23 +167,26 @@ sudo reboot #再起動
     - Linux 用 Windows サブシステムをONにします
     - WSL2 Ubuntu-20.04 LTSのインストールします
     - Windowsマークを右クリック→Windowsターミナル（管理者）を立ち上げ、以下のコマンドラインからWSL2 Ubuntu-20.04 LTSをインストール  
-> wsl --install -d Ubuntu-20.04
--
+  ```
+  wsl --install -d Ubuntu-20.04
+  ```
   - NVIDIAドライバのインストール  
     - NVIDIAのダウンロードサイトから、windows->x86_64->11->exe を選択してダウンロードしてインストール
     - CUDA ToolkitとCUDNNをNVIDIA 公式の手順や検索情報を参考にインストール
   - WSLの自動インストーラで一式導入するため、WSLのshellを起動  
-> git clone https://github.com/tak6uch1/wsl2_pytorch_tf_gpu.git  
-> cd wsl2_pytorch_tf_gpu  
-> bash 1_install_cuda.sh  
+  ```
+  git clone https://github.com/tak6uch1/wsl2_pytorch_tf_gpu.git
+  cd wsl2_pytorch_tf_gpu  
+  bash 1_install_cuda.sh
+  ```
   - Windows上のブラウザでLocal Installer for Ubuntu20.04 x86_64[Deb] をダウンロード  
     ダウンロードフォルダにcudnn-local-repo-ubuntu2004-8.3.2.44_1.0-1_amd64.debがダウンロードされる 
   - wsl2_pytorch_tf_gpuに移動して3_install_cudnn.shを実行  
     次のようにするとよいでしょう  
-```
-mv /mnt/c/Users/user_name/Downloads/cudnn-local-repo-ubuntu2004-8.3.2.44_1.0-1_amd64.deb .
-bash 2_install_cudnn.sh
-```
+  ```
+  mv /mnt/c/Users/user_name/Downloads/cudnn-local-repo-ubuntu2004-8.3.2.44_1.0-1_amd64.deb .
+  bash 2_install_cudnn.sh
+  ```
 
 - インストール環境の確認
   - コマンドラインに以下をいれて動作を確認してください  
