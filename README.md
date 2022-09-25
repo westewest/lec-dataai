@@ -150,14 +150,15 @@ WindowsかUbuntu PCを準備します
   - Ubuntuの利用を推奨します
     - Ubuntu20.04、22.04いずれも問題ありません
   - NVIDIAドライバーを導入  
+    - 通常は、以下のコマンドを入力して導入してください
+    - もし狙ったバージョンを導入したい場合は、`ubuntu-drivers devices`としてrecommended付を指定し、例えば`sudo apt install nvidia-driver-nnn`としてインストール後再起動`sudo reboot`してください
+
 ```
-sudo add-apt-repository ppa:graphics-drivers/ppa (新しいGPUなどドライバが見つからない場合)
+sudo add-apt-repository ppa:graphics-drivers/ppa #新しいGPUなどドライバが見つからない場合のみ実行
 sudo apt update
 sudo apt install ubuntu-drivers-common
+sudo reboot #再起動
 ```
-
-  - 狙ったバージョンを導入するなら  
-      `ubuntu-drivers devices`としてrecommended付を指定し、例えば`sudo apt install nvidia-driver-nnn`としてインストール後再起動`sudo reboot`
 
 - Windowsマシンへのインストールについて
   - Windows上でNVIDIAのCuDNNダウンロードサイトをブラウザで開き、I Agree～にチェックを入れ、CUDA 11.xを選択して導入してください
