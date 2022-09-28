@@ -101,7 +101,7 @@ https://github.com/keioNishi/lec-dataai/wiki
 - H-PyTorch-GAN-1  
 [![dataai-text-H-PyTorch-GAN.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-H-PyTorch-GAN-1.ipynb)
 - H-PyTorch-GAN-2  
-[![dataai-text-H-PyTorch-GAN.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-zh-PyTorch-GAN-2.ipynb)
+[![dataai-text-H-PyTorch-GAN.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-H-PyTorch-GAN-2.ipynb)
 - I-PyTorch-NLP-1-Basics  
 [![dataai-text-I-PyTorch-NLP-1-Basics.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-I-PyTorch-NLP-1-Basics.ipynb)
 - I-PyTorch-NLP-2-S2SAtten  
