@@ -94,28 +94,30 @@ https://github.com/keioNishi/lec-dataai/wiki
 [![dataai-text-D-PyTorch-強化学習.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-D-PyTorch-強化学習.ipynb)
 - E-PyTorch-説明可能AI  
 [![dataai-text-E-PyTorch-説明可能AI.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-E-PyTorch-説明可能AI.ipynb)
-- F-PyTorch-GAN-1  
-[![dataai-text-F-PyTorch-GAN.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-F-PyTorch-GAN-1.ipynb)
-- F-PyTorch-GAN-2  
-[![dataai-text-F-PyTorch-GAN.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-F-PyTorch-GAN-2.ipynb)
-- G-PyTorch-NLP-1-Basics  
-[![dataai-text-G-PyTorch--NLP-1-Basics.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-G-PyTorch-NLP-1-Basics.ipynb)
-- G-PyTorch-NLP-2-S2SAtten  
-[![dataai-text-G-PyTorch--NLP-2-S2SAtten.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-G-PyTorch--NLP-2-S2SAtten.ipynb)
-- G-PyTorch-NLP-3-Transformer  
-[![dataai-text-G-PyTorch-NLP-3-Transformer.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-G-PyTorch-NLP-3-Transformer.ipynb)
-- G-PyTorch-NLP-4-BERT  
-[![dataai-text-G-PyTorch-NLP-4-BERT.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-G-PyTorch-NLP-4-BERT.ipynb)
-- H-PyTorch-音声識別  
-[![dataai-text-H-PyTorch-音声識別.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-H-PyTorch-音声識別.ipynb)
-- I-PyTorch-StyleGAN-1  
-[![dataai-text-I-StyleGAN-1.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-I-PyTorch-StyleGAN-1.ipynb)
-- I-PyTorch-StyleGAN-2  
-[![dataai-text-I-StyleGAN-2.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-I-PyTorch-StyleGAN-2.ipynb)
-- I-PyTorch-StyleGAN-3  
-[![dataai-text-I-StyleGAN-3.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-I-PyTorch-StyleGAN-3.ipynb)
-- J-PyTorch-Diffusion  
-[![dataai-text-I-StyleGAN-3.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-J-PyTorch-Diffusion.ipynb)
+- F-PyTorch-物体検出  
+[![dataai-text-F-PyTorch-物体検出.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-F-PyTorch-物体検出.ipynb)
+- G-PyTorch-音声識別  
+[![dataai-text-G-PyTorch-音声識別.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-G-PyTorch-音声識別.ipynb)
+- H-PyTorch-GAN-1  
+[![dataai-text-H-PyTorch-GAN.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-H-PyTorch-GAN-1.ipynb)
+- H-PyTorch-GAN-2  
+[![dataai-text-H-PyTorch-GAN.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-I-PyTorch-GAN-2.ipynb)
+- I-PyTorch-NLP-1-Basics  
+[![dataai-text-I-PyTorch-NLP-1-Basics.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-I-PyTorch-NLP-1-Basics.ipynb)
+- I-PyTorch-NLP-2-S2SAtten  
+[![dataai-text-I-PyTorch-NLP-2-S2SAtten.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-I-PyTorch--NLP-2-S2SAtten.ipynb)
+- I-PyTorch-NLP-3-Transformer  
+[![dataai-text-I-PyTorch-NLP-3-Transformer.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-G-PyTorch-NLP-3-Transformer.ipynb)
+- I-PyTorch-NLP-4-BERT  
+[![dataai-text-I-PyTorch-NLP-4-BERT.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-I-PyTorch-NLP-4-BERT.ipynb)
+- J-PyTorch-StyleGAN-1  
+[![dataai-text-J-PyTorch-StyleGAN-1.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-J-PyTorch-StyleGAN-1.ipynb)
+- J-PyTorch-StyleGAN-2  
+[![dataai-text-J-PyTorch-StyleGAN-2.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-J-PyTorch-StyleGAN-2.ipynb)
+- J-PyTorch-StyleGAN-3  
+[![dataai-text-J-PyTorch-StyleGAN-3.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-J-PyTorch-StyleGAN-3.ipynb)
+- K-PyTorch-Diffusion  
+[![dataai-text-K-PyTorch-Diffusion-3.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-K-PyTorch-Diffusion.ipynb)
 ----
 
 ## 個人PCへのCUDA環境の構築について
