@@ -4,7 +4,10 @@
 [![HIT-Academy](https://img.shields.io/badge/Slack-hitacademy--ml-3f0f40.svg?style=flat)](https://hitacademy-ml.slack.com/)
 
 # 「データシステムの知能化とデザイン」「深層機械学習ハンズオン」「マシンラーニング」レクチャーノートブック
-このレポジトリでは、西が担当する授業である「データシステムの知能化とデザイン」、「深層機械学習ハンズオン」、「マシンラーニング」で利用するテキストを公開しています
+このレポジトリでは、西が担当する以下の授業のテキストを公開しています
+- 「データシステムの知能化とデザイン」(慶應理工SD3年授業)
+- 「深層機械学習ハンズオン」(日立アカデミー)
+- 「マシンラーニング」(その他一般企業向けセミナー)
 
 ## lec-dataai / Lecture Notes for "Design of Systems for Data and Artificial Intelligence"
 - 全体の閲覧とダウンロード
