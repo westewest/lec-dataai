@@ -9,11 +9,11 @@
 - 「深層機械学習ハンズオン」(日立アカデミー)
 - 「マシンラーニング」(その他一般企業向けセミナー)
 
-## lec-dataai / Lecture Notes for "Design of Systems for Data and Artificial Intelligence"
+## このレポジトリの利用について
 - 全体の閲覧とダウンロード
   - 左上もしくはこちら[![「データシステムの知能化とデザイン」レクチャーノートブック](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai)のバッジを利用してください
 - 個別ダウンロードは下記にリンクがあります
-  - 個別ダウンロードはGitHubから直接Colaboratoryのサイトを開くことができるため、講義を受ける際にはこちらが便利です
+  - 授業を受ける際にはこちらが便利です
 
 ### 授業形態について
 - この授業は、講義・演習で構成されます
