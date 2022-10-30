@@ -81,8 +81,10 @@ https://github.com/keioNishi/lec-dataai/wiki
 [![dataai-text-D-PyTorch-強化学習.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-D-PyTorch-強化学習.ipynb)
 - E-PyTorch-説明可能AI  
 [![dataai-text-E-PyTorch-説明可能AI.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-E-PyTorch-説明可能AI.ipynb)
-- F-PyTorch-物体検出  
-[![dataai-text-F-PyTorch-物体検出.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-F-PyTorch-物体検出.ipynb)
+- F-PyTorch-物体変出-1  
+[![dataai-text-F-PyTorch-物体変出-1-マルチモデル・パラメタ変更.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-F-PyTorch-物体変出-1-マルチモデル・パラメタ変更.ipynb)
+- F-PyTorch-物体検出-2  
+[![dataai-text-F-PyTorch-物体検出-2-YoLov3.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-F-PyTorch-物体検出-2-YoLov3.ipynb)
 - G-PyTorch-音声識別  
 [![dataai-text-G-PyTorch-音声識別.ipynb](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai/blob/main/dataai-text-G-PyTorch-音声識別.ipynb)
 - H-PyTorch-GAN-1  
