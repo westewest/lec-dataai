@@ -1,17 +1,17 @@
-[![「データシステムの知能化とデザイン」「深層機械学習ハンズオン」「マシンラーニング」レクチャーノートブック](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai)
+[![レクチャーノートブック](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai)
 [![PyTorchバッジ](https://img.shields.io/badge/PyTorch->v1.0-232f3e.svg?style=flat)](https://pytorch.org/)
 [![Slackデータシステムの知能化とデザイン](https://img.shields.io/badge/Slack-keio--sd--dataai-3f0f40.svg?style=flat)](https://keio-sd-dataai.slack.com/)
 [![HIT-Academy](https://img.shields.io/badge/Slack-hitacademy--ml-3f0f40.svg?style=flat)](https://hitacademy-ml.slack.com/)
 
-# 「データシステムの知能化とデザイン」「深層機械学習ハンズオン」「マシンラーニング」レクチャーノートブック
-このレポジトリでは、西が担当する以下の授業のテキストを公開しています
-- 「データシステムの知能化とデザイン」(慶應理工SD3年授業)
+# レクチャーノートブック
+このレポジトリでは、西が担当する以下の講義のテキストを公開しています
+- 「データシステムの知能化とデザイン」(慶應理工SD3年選択コース)
 - 「深層機械学習ハンズオン」(日立アカデミー)
 - 「マシンラーニング」(その他一般企業向けセミナー)
 
 ## このレポジトリの利用について
 - 全体の閲覧とダウンロード
-  - 左上もしくはこちら[![「データシステムの知能化とデザイン」レクチャーノートブック](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai)のバッジを利用してください
+  - 左上もしくはこちら[![レクチャーノートブック](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/keioNishi/lec-dataai)のバッジを利用してください
 - 個別ダウンロードは下記にリンクがあります
   - 授業を受ける際にはこちらが便利です
 
