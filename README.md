@@ -141,10 +141,11 @@ https://github.com/keioNishi/lec-dataai/wiki
 - 特に困らないであろうというところは、説明を省略しています。
 - 相応のマシン管理、Linuxの知識が必要です
 
-なお、下記はWindows WSLとUbuntu環境について記述しています
+なお、下記はWindows WSL2とUbuntu環境について記述しています
 - Ubuntu(20.04および22.04)の利用を推奨します
 - Windows上で動作するAnacondaを利用して構築することもできます
  - 推奨ではありませんが、以下を参考にしてトライしてみてください
+ - WSL2を利用する場合は、比較的容易に構築できるはずです
 
 ### CUDAのインストール
 
@@ -155,47 +156,52 @@ WindowsかUbuntu PCを準備します
   - Ubuntu以外のLinuxディストリビューションでもインストール可能ですが、インストール方法は各自で確認してください
   - Windows環境を利用する場合、特に新しいGPUを用いる場合はさらに険しい道となります
 - Linuxマシンへのインストールについて
+  - build-essentialをインストール
+  ```
+  sudo apt install build-essential
+  ```
+  として開発ツール一式を一気に導入します
+  - CUDA Toolkitをインストール
+    - [こちら](https://developer.nvidia.com/cuda-downloads) からダウンロードしてください(リンクは変更されている可能性があります)
+    - WSL2の場合は、Linux, x86_64(環境に併せてください), Ubuntu, deb(network)を選択します(インストールしたバージョンも指定します)
+    - 表示されるコマンドラインをWSL2 Ubuntuのコマンドラインに入力して実行します
   - Ubuntuの利用を推奨します
     - Ubuntu20.04、22.04いずれも問題ありません
   - NVIDIAドライバーを導入  
     - 通常は、以下のコマンドを入力して導入してください
-    - もし狙ったバージョンを導入したい場合は、`ubuntu-drivers devices`としてrecommended付を指定し、例えば`sudo apt install nvidia-driver-nnn`としてインストール後再起動`sudo reboot`してください
-
   ```
-  sudo add-apt-repository ppa:graphics-drivers/ppa #新しいGPUなどドライバが見つからない場合のみ実行
-  sudo apt update
-  sudo apt install ubuntu-drivers-common
+  sudo ubuntu-drivers list
+  sudo ubuntu-drivers install 
   sudo reboot #再起動
   ```
-
+    - うまくいかない場合は、GUIドライバ(X Windowsのドライバ)と競合している場合があります  
+    ```
+    sudo sh -c "cat << ETX > /etc/modprobe.d/blacklist-nouveau.conf
+    blacklist nouveau
+    options nouveau modeset=0
+    ETX" && cat /etc/modprobe.d/blacklist-nouveau.conf
+    sudo update-initramfs -u
+    sudo reboot
+    ```
+    として回避してください
 - Windowsマシンへのインストールについて
-  - Windows上でNVIDIAのCuDNNダウンロードサイトをブラウザで開き、I Agree～にチェックを入れ、CUDA 11.xを選択して導入してください
   - WSL2をインストールします  
     WSL2のインストールの詳細は検索して対応してください
-    - Linux 用 Windows サブシステムをONにします
+    - WSL2が動作するように設定を変更します
+    - 「Windows の機能の有効化または無効化」の」「Linux 用 Windows サブシステム」をONにします
     - WSL2 Ubuntu-20.04 LTSのインストールします
-    - Windowsマークを右クリック→Windowsターミナル（管理者）を立ち上げ、以下のコマンドラインからWSL2 Ubuntu-20.04 LTSをインストール  
+    - Windowsマークを右クリック→Windowsターミナル（管理者）を立ち上げ、次のコマンドを実行してUbuntuをインストールします
   ```
-  wsl --install -d Ubuntu-20.04
+  wsl --install
   ```
-  - NVIDIAドライバのインストール  
-    - NVIDIAのダウンロードサイトから、windows->x86_64->11->exe を選択してダウンロードしてインストール
-    - CUDA ToolkitとCUDNNをNVIDIA 公式の手順や検索情報を参考にインストール
-  - WSLの自動インストーラで一式導入するため、WSLのshellを起動  
-  ```
-  git clone https://github.com/tak6uch1/wsl2_pytorch_tf_gpu.git
-  cd wsl2_pytorch_tf_gpu  
-  bash 1_install_cuda.sh
-  ```
-  - Windows上のブラウザでLocal Installer for Ubuntu20.04 x86_64[Deb] をダウンロード  
-    ダウンロードフォルダにcudnn-local-repo-ubuntu2004-8.3.2.44_1.0-1_amd64.debがダウンロードされる 
-  - wsl2_pytorch_tf_gpuに移動して3_install_cudnn.shを実行  
-    次のようにするとよいでしょう  
-  ```
-  mv /mnt/c/Users/user_name/Downloads/cudnn-local-repo-ubuntu2004-8.3.2.44_1.0-1_amd64.deb .
-  bash 2_install_cudnn.sh
-  ```
-
+  - NVIDIA Drivers for CUDA on WSL のインストール(WSL2を利用する場合はWSL専用のドライバがありますので注意してください)
+    - Windowsで作業します
+    - [こちら](https://developer.nvidia.com/cuda/wsl) からダウンロードしてください(リンクは変更されている可能性があります)
+    - 所持しているGPUの型番が必要です
+  - CUDA Toolkitをインストール
+    - [こちら](https://developer.nvidia.com/cuda-downloads) からダウンロードしてください(リンクは変更されている可能性があります)
+    - WSL2の場合は、Linux, x86_64(環境に併せてください), WSL-Ubuntu, deb(network)を選択します(インストールしたバージョンも指定します)
+    - 表示されるコマンドラインをWSL2 Ubuntuのコマンドラインに入力して実行します
 - インストール環境の確認
   - コマンドラインに以下をいれて動作を確認してください  
 > nvidia-smi 
