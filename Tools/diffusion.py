@@ -19,7 +19,7 @@ pipe = pipe.to(device)
 prompt = [prompt] * num_of_fig
 images = []
 with autocast("cuda"):
-    images = pipe(prompt, guidance_scale=7.5)["sample"]
+    images = pipe(prompt, guidance_scale=7.5)["images"]
 
 for i in range(num_of_fig):
 	images[i].save(f"test%d.png"%(i))
