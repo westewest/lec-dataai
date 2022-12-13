@@ -438,6 +438,30 @@ http://localhost:8888/ バックエンドに指定されているはずですの
 
 これで、 Google Coalbを利用せず、自分の環境を利用するようになります。全ての制限が外れます。つまり、利用時間やセッションの制限はなくなり、ファイルが消えることもありません
 
+### resolv.conf
+
+wslは、resolv.confを勝手に書き換えて、そのまま名前が解決できず接続できない環境を作ってしまいがちである
+- `/etc/resolv.conf`を例えば`nameserver 8.8.8.8`などとすると動作する
+- このような現象が発生する場合は、以下の通りの修正で解決する
+
+一般には、`rc.local`というファイルを生成することで、このファイルが起動時実行されることから、中に`/etc/resolv.con`を書き換えるように記述すればよいが、wslには`rc.local`を実行させる機能が備わっていない
+
+しかしながら、wslが最初に`/sbin/mount -a`を実行することから、このときにrcファイルシステムをマウントするように設定し、`mount.rc`を呼び出させることで、`rc.local`と同じことができる
+- この中で`resolv.conf`を書き換えるという技を使う
+
+手順は次の通り
+- まず、`none none rc defaults 0 0`という行を/etc/fstabに追加する
+  - これにより起動時に`/sbin/mount.rc`ファイルが呼び出されるようになる
+- `/sbin/mount.rc`ファイルを実行可能スクリプトとして作成する
+  - sudo su でroot権限に入る
+  - echo '#!/bin/bash' > /sbin/mount.rc
+  - chmod +x /sbin/mount.rc
+  - echo '(sleep 5; nameserver 8.8.8.8)&' >> /sbin/mount.rc
+  - chmod +x /sbin/mount.rc
+  - 忘れずにexitしておく
+  
+実は、resolv.confを書き換える前にmount.rcが呼び出されてしまうため、sleepする必要がある
+
 ## 注意
 
 一度動く環境ができたら、その環境を維持するため、`conda update --all`すらも避けるべきです
