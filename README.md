@@ -212,11 +212,13 @@ WindowsかUbuntu PCを準備します
 
 ### Anacondaのインストール
 ここから先はWindowsのWSLとLinux Ubuntuで共通です
-- Anacondaのサイトからインストール用スクリプトをダウンロード 
+- Anacondaのサイト(https://anaconda.com)からインストール用スクリプトをダウンロード 
   - Linux 64-Bit(x86) Installer を選択 
 - インストール用スクリプトを実行、誰々は自身のアカウント名に変更  
 ```
-bash /mnt/c/Users/誰々/Downloads/Anaconda3-2021.11-Linux-x86_64.sh 
+bash /mnt/c/Users/誰々/Downloads/Anaconda3-インストールバージョン-Linux-x86_64.sh
+もしくは
+sh ./Downloads/Anaconda3-インストールバージョン-Linux-x86_64.sh
 ```
 - Anacondaインストーラが~/.bashrcに設定を追記するため、sourceする
 ```
