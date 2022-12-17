@@ -247,7 +247,7 @@ conda activate lecml
 なお、`conda info -e`とすると、作った環境の一覧を見ることができます
 
 ### Pytorhをインストールする
-まずはpytorchのホームぺージ(https://pytorch.org/)に行きます
+まずは[pytorchのホームぺージ](https://pytorch.org/)に行きます
 toolkitはCUDAバージョンを指定してインストールします
 - バージョンは`nvidia-smi`の右上に表示されます
 - 基本的には最新版を導入しますが、下記動作確認で失敗するようであればNightlyを導入する必要があるかもしれません
