@@ -212,7 +212,7 @@ WindowsかUbuntu PCを準備します
 
 ### Anacondaのインストール
 ここから先はWindowsのWSLとLinux Ubuntuで共通です
-- Anacondaのサイト( https://anaconda.com )からインストール用スクリプトをダウンロード 
+- Anacondaのサイトからインストール用スクリプトをダウンロード(https://anaconda.com)
   - Linux 64-Bit(x86) Installer を選択 
 - インストール用スクリプトを実行、誰々は自身のアカウント名に変更  
 ```
