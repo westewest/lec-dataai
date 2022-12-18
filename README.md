@@ -350,6 +350,7 @@ conda install -y -c conda-forge mecab
 sudo apt install libmecab-dev mecab-ipadic-utf8
 pip install mecab-python3
 sudo ln -s /etc/mecabrc /usr/local/etc/mecabrc
+pip install unidic-lite
 ```
 - テキストの中も相当数追加していますので注意してください
 
