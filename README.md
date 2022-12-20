@@ -142,20 +142,49 @@ https://github.com/keioNishi/lec-dataai/wiki
 - 相応のマシン管理、Linuxの知識が必要です
 
 なお、下記はWindows WSL2とUbuntu環境について記述しています
-- Ubuntu(20.04および22.04)の利用を推奨します
+- Ubuntu(20.04および22.04)の利用を強く推奨します
+  - Ubuntu以外のLinuxディストリビューションでもインストール可能ですが、インストール方法は各自で確認してください
+  - 現時点でUbuntu, wsl共に最新のRTX4090へのインストールはそれなりに問題が解決されています
+  - WSLではないWindows環境の利用は、特に新しいGPUを用いる場合は険しい道となる場合があり、また動作速度も遅いという報告があるため全く推奨されません
 - Windows上で動作するAnacondaを利用して構築することもできます
  - 推奨ではありませんが、以下を参考にしてトライしてみてください
- - WSL2を利用する場合は、比較的容易に構築できるはずです
+ - WSL2を利用すれば、比較的容易に構築できるはずです
 
 ### CUDAのインストール
 
 インストール作業は、慣れない場合ほぼ丸一日作業となりますので注意してください
 
-WindowsかUbuntu PCを準備します 
-- Ubuntu環境を用いて構築することを強くお勧めします
-  - Ubuntu以外のLinuxディストリビューションでもインストール可能ですが、インストール方法は各自で確認してください
-  - Windows環境を利用する場合、特に新しいGPUを用いる場合はさらに険しい道となります
-- Linuxマシンへのインストールについて
+Windows、Ubuntu、もしくは新しいPCを準備します  
+以下、WindowsでWSLを用いて構築する場合、Linuxマシンを新たに構築する場合、インストール済みLinuxマシンに構築する場合の順に手順を説明します
+- Windowsマシンへのインストールについて
+  - WSL2をインストールします  
+    WSL2のインストールの詳細は検索して対応してください
+    - WSL2が動作するように設定を変更します
+    - 「Windows の機能の有効化または無効化」の」「Linux 用 Windows サブシステム」をONにします
+    - WSL2 Ubuntu-20.04 LTSのインストールします
+    - Windowsマークを右クリック→Windowsターミナル（管理者）を立ち上げ、次のコマンドを実行してUbuntuをインストールします
+  ```
+  wsl --install
+  ```
+  - NVIDIA Drivers for CUDA on WSL のインストール(WSL2を利用する場合はWSL専用のドライバがありますので注意してください)
+    - Windowsで作業します
+    - [こちら](https://developer.nvidia.com/cuda/wsl) からダウンロードしてください(リンクは変更されている可能性があります)
+    - 所持しているGPUの型番が必要です
+  - CUDA Toolkitをインストール
+    - [こちら](https://developer.nvidia.com/cuda-downloads) からダウンロードしてください(リンクは変更されている可能性があります)
+    - WSL2の場合は、Linux, x86_64(環境に併せてください), WSL-Ubuntu, deb(network)を選択します(インストールしたバージョンも指定します)
+    - 表示されるコマンドラインをWSL2 Ubuntuのコマンドラインに入力して実行します
+- Linuxマシンを新たに構築しインストールする場合について
+  - Ubuntu22.04.xをインストールします
+  - **インストール時に、'Install third-party software ...' のチェックボックスをONにしてインストールします**
+  - これだけで基本環境がすべて導入され、'nvidia-smi'が動作するようになります
+  - 念のため、build-essentialをインストール
+  ```
+  sudo apt install build-essential
+  ```
+  として開発ツール一式を一気に導入します
+- 構築済みのLinuxマシンへのインストールについて
+  - 上記のように再インストールするとトラブルが少ないですが、必要に応じて以下の手順でインストールします
   - build-essentialをインストール
   ```
   sudo apt install build-essential
@@ -184,29 +213,11 @@ WindowsかUbuntu PCを準備します
     sudo reboot
     ```
     として回避してください
-- Windowsマシンへのインストールについて
-  - WSL2をインストールします  
-    WSL2のインストールの詳細は検索して対応してください
-    - WSL2が動作するように設定を変更します
-    - 「Windows の機能の有効化または無効化」の」「Linux 用 Windows サブシステム」をONにします
-    - WSL2 Ubuntu-20.04 LTSのインストールします
-    - Windowsマークを右クリック→Windowsターミナル（管理者）を立ち上げ、次のコマンドを実行してUbuntuをインストールします
-  ```
-  wsl --install
-  ```
-  - NVIDIA Drivers for CUDA on WSL のインストール(WSL2を利用する場合はWSL専用のドライバがありますので注意してください)
-    - Windowsで作業します
-    - [こちら](https://developer.nvidia.com/cuda/wsl) からダウンロードしてください(リンクは変更されている可能性があります)
-    - 所持しているGPUの型番が必要です
-  - CUDA Toolkitをインストール
-    - [こちら](https://developer.nvidia.com/cuda-downloads) からダウンロードしてください(リンクは変更されている可能性があります)
-    - WSL2の場合は、Linux, x86_64(環境に併せてください), WSL-Ubuntu, deb(network)を選択します(インストールしたバージョンも指定します)
-    - 表示されるコマンドラインをWSL2 Ubuntuのコマンドラインに入力して実行します
-- インストール環境の確認
-  - コマンドラインに以下をいれて動作を確認してください  
-> nvidia-smi 
 
 以下、Ubuntu、Windows共に共通です
+- インストール環境の確認
+  - コマンドラインに以下のコマンドを入力して動作を確認してください  
+> nvidia-smi
 
 ### Anacondaのインストール
 ここから先はWindowsのWSLとLinux Ubuntuで共通です
