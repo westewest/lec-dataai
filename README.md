@@ -467,8 +467,7 @@ wslは、resolv.confを勝手に書き換えて、そのまま名前が解決で
 - `/sbin/mount.rc`ファイルを実行可能スクリプトとして作成する
   - sudo su でroot権限に入る
   - echo '#!/bin/bash' > /sbin/mount.rc
-  - chmod +x /sbin/mount.rc
-  - echo '(sleep 5; nameserver 8.8.8.8)&' >> /sbin/mount.rc
+  - echo '(sleep 5; echo "nameserver 8.8.8.8" > /etc/resolv.conf)&' >> /sbin/mount.rc
   - chmod +x /sbin/mount.rc
   - 忘れずにexitしておく
   
