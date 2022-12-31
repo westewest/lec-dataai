@@ -361,6 +361,7 @@ pip install mecab-python3
 sudo ln -s /etc/mecabrc /usr/local/etc/mecabrc
 pip install unidic-lite
 ```
+
 - テキストの中も相当数追加していますので注意してください
 
 #### その他
@@ -377,6 +378,11 @@ conda install -y tensorflow-gpu tensorflow-datasets tensorflow-hub -c conda-forg
 ```
 で入る場合もあります  
 なお、tensorflow-gpuさえ入ればなんとかなります
+
+- tensorboardも導入する
+Colabはtensorboardが初めからインストールされており、テキストの最後の方で利用するため、ここで導入しておく
+
+pip install tensorboard
 
 - 以下は対策して不要としています
   - quilt
