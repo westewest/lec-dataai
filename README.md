@@ -272,7 +272,7 @@ conda install -y pytorch torchvision torchaudio cudatoolkit=11.x -c pytorch -c c
 - 3090などsm_86アーキテクチャは11.6からサポートとなっています
 
 ```
-conda install pytorch torchvision torchaudio pytorch-cuda=11.x -c pytorch-nightly -c nvidia
+conda install -y pytorch torchvision torchaudio pytorch-cuda=11.x -c pytorch-nightly -c nvidia
 ```
 となります
 
@@ -301,7 +301,7 @@ NVIDIA GeForce RTX 3090
 ### Jupyter Notebookをインストール
 Google Colaboratoryと協調動作させることや、Colabなしでもテキストの閲覧と実行ができるようになります  
 ```
-conda install jupyter
+conda install -y jupyter
 pip install --upgrade jupyter_http_over_ws
 jupyter serverextension enable --py jupyter_http_over_ws
 jupyter nbextension enable --py widgetsnbextension
@@ -334,7 +334,7 @@ pip install opencv-python
 
 なお、以下の方法もありますが、不要のはずです
 ```
-conda install opencv こちらが上手くいかない場合は、conda-forgeで
+conda install -y opencv こちらが上手くいかない場合は、conda-forgeで
 conda install -y -c conda-forge opencv
 ```
 
@@ -347,7 +347,7 @@ conda create -n lecmlbk --clone lecml
 - pytorch関連
   - 2022年9月時点で、最新のGPU(3090系など)を利用している場合、インストールにより必要な`sm_84`未対応のグレードダウンしたpytorchがインストールされますので、避けた方がよく、その場合テキストの一部で動作できない記述が発生します
 ```
-pip install torchdata torchtext
+pip install -y torchdata torchtext
 ```
 - mecab関連  
 ほぼ役割を終えましたが…
@@ -379,10 +379,11 @@ conda install -y tensorflow-gpu tensorflow-datasets tensorflow-hub -c conda-forg
 で入る場合もあります  
 なお、tensorflow-gpuさえ入ればなんとかなります
 
-- tensorboardも導入する
+- tensorboardも導入する  
 Colabはtensorboardが初めからインストールされており、テキストの最後の方で利用するため、ここで導入しておく
-
+```
 pip install tensorboard
+```
 
 - 以下は対策して不要としています
   - quilt
