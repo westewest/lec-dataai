@@ -349,7 +349,7 @@ conda create -n lecmlbk --clone lecml
 - pytorch関連
   - 2022年9月時点で、最新のGPU(3090系など)を利用している場合、インストールにより必要な`sm_84`未対応のグレードダウンしたpytorchがインストールされますので、避けた方がよく、その場合テキストの一部で動作できない記述が発生します
 ```
-pip install -y torchdata torchtext
+pip install torchdata torchtext
 ```
 - mecab関連  
 ほぼ役割を終えましたが…
