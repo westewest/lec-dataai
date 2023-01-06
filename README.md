@@ -278,19 +278,21 @@ conda install -y pytorch torchvision torchaudio pytorch-cuda=11.x -c pytorch-nig
 
 導入したら、次で動作を確認  
 ```
-python
+$ python
+Python 3.10.8 (main, Nov 24 2022, 14:13:03) [GCC 11.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
 >>> import torch
 >>> print(torch.cuda.is_available)
-<function is_available at 0x7fcd1fc94820>
+<function is_available at 0x7f59771869e0>
 >>> print(torch.cuda.is_available())
 True
 >>> print(torch.cuda.get_device_name())
-NVIDIA GeForce RTX 3090
+NVIDIA GeForce RTX 4090
 >>> print(torch.version.cuda)
-11.6
+11.7
 >>> print(torch.cuda.get_arch_list())
 ['sm_37', 'sm_50', 'sm_60', 'sm_61', 'sm_70', 'sm_75', 'sm_80', 'sm_86', 'compute_37']
->>>
+>>> 
 ```
 などとなりますが、まず最初にTrueと出ればOK、出ない場合は、頑張って解決しましょう  
 例えば、間違ってcpu版が入っている可能性があります
