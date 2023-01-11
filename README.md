@@ -314,7 +314,7 @@ jupyter nbextension enable --py widgetsnbextension
 なお、condaで入れていますが、-c conda-forge オプションが必要な場合もあります  
 まずは、次で一気にいれてみます
 ```
-conda install -y numpy pandas matplotlib scikit-learn scikit-learn-intelex scikit-image python-graphviz pydotplus  seaborn missingno lxml lightgbm xgboost ipywidgets requests beautifulsoup4 gensim keras
+conda install -y numpy pandas matplotlib scikit-learn scikit-learn-intelex scikit-image python-graphviz pydotplus seaborn missingno lxml lightgbm xgboost ipywidgets requests beautifulsoup4 gensim keras
 ```
 もし、問題が発生するか、`Solving environment: failed with initial frozen solve. Retrying with flexible solve.`と表示され、多くの場合かなり待たされた場合は、さらに待っても解決しない可能性が高いです  
 - このような場合、baseでconda update condaとしてcondaを更新するのも一つの手ですが、環境は人によって異なるため、とにかくもがいてください
