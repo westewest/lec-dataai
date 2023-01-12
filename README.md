@@ -484,6 +484,8 @@ wslは、resolv.confを勝手に書き換えて、そのまま名前が解決で
 
 ## 注意
 
+### Anacondaの操作について
+
 一度動く環境ができたら、その環境を維持するため、`conda update --all`すらも避けるべきです
 - これで壊してしまった経験が何度かあります
 ```
@@ -498,3 +500,12 @@ conda create -n copyenv --clone originenv
 - `conda create -n myenv python=3.7`: Python バージョンを指定して作成
 - `conda activate test`: 環境testの有効化
 - `conda deactivate`: 環境の無効化
+
+### Anacondaが最初に起動しないようにする
+
+また、Anacondaをインストールすると、(base)と表示されます。これが嫌という場合もあるかと思います。
+```
+conda config --set auto_activate_base false
+```
+として、デフォルトでbaseがactivateされないようにするとよいでしょう。ログインしなおすと(base)と表示されません。
+
