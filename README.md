@@ -396,7 +396,7 @@ conda install -y -c conda-forge quilt
 quilt install --force ResidentMario/missingno_data
 ```
 
-#### 最後に
+### 最後に
 
 ここまでインストールしたら、この環境を壊さないように、バックアップを取得しておきましょう
 - 動作しなくなったら、こちらで取得したlecmlbkというバックアップをリストアして利用するとよいです
@@ -404,13 +404,85 @@ quilt install --force ResidentMario/missingno_data
 conda create -n lecmlbk --clone lecml
 ```
 
+### おまけ
 
-- おまけ
+#### jupyter AIを導入
+
+```
+pip install jupyter_ai openai huggingface_hub ipywidgets pillow
+```
+
+として導入、jupyter-aiを起動すると、jupyter同様に8888ポートで見えるようになる
+
+できることは次の通り
+
+- チャットできる
+      
+  - 左パネルにチャットのボタンが追加されており、ChatGPTと対話できる
+  - Language modelをOpenAI::gpt-4に、Embadding modelをOpenAI::text-embedding-ada-002などに設定する
+  - APIKEYを入力する(ここは有料です)
+
+- ノートブックについて問い合わせる
+      
+  - ノートブックのセルに対して範囲選択をすると、チャットエリアの下部にInclude selectionとReplace selectionが表示され、Include selectionを選択すると選択したコードを含んだ形で質問ができる
+  - Replace selectionを選択すると、選択したコードがチャットの回答で上書きされる(チャットの回答が正しい保障はない)
+
+- 追加で学習させる
+      
+これが強力で、embedding modelを用いることで、チャットが質問に答える際に自分が保有するドキュメントなどのローカルデータを含めるようにすることができる
+  - 例えば、docsというフォルダを作成し、その下に様zまあなドキュメントを入れ、チャット欄で、`/learn docs/`と入力することで学習させることができる(/learnがコマンド)
+  - この学習した内容に対して問い合わせる場合は`/ask "質問文章"`とする
+      
+- マジックコマンドを利用して、直接結果をセルに反映する
+      
+`%load_ext jupyter_ai_magics`として拡張機能をロードし、`%ai list`として、その一覧をみると様々な機能拡張が利用できることがわかる
+
+```
+%%ai openai:text-ada-001
+Write some JavaScript code that prints "hello world" to the console.
+```
+
+このようにmodel IDも指定してコマンドを使うことで、結果がmarkdown内に挿入され、`%%ai openai:text-ada-001 -f code`とすると、コードとして挿入される
+      
+- セルを参照することができる
+
+セルを参照することができるコマンドが存在するため、次のような指定ができる
+
+```
+%%ai openai:text-davinci-003 --format code
+The following Python code:
+--
+{In[14]}
+--
+produced the following Python error:
+--
+{Err[14]}
+--
+Please tell me the cause of the error.
+```
+
+- Stable Diffusionで画像生成
+
+なんてことはない
+
+```
+%%ai huggingface_hub:stabilityai/stable-diffusion-2-1 --format image
+It's an astronaut with a boombox
+```
+
+ちなみに、waifu-diffusionの場合は、次の通り
+
+```
+%%ai huggingface_hub:hakurei/waifu-diffusion --format image
+masterpiece, best quality, 1girl, green hair, sweater, looking at viewer, upper body, beanie, outdoors, watercolor, night, turtleneck
+```
+
+- ただし、日本語の対応はいまいちで今後のに期待
+
+#### wgetの導入
 
 中にはwgetなど、Linux系のコマンドを利用しています  
 Linux上で構築する場合は特に問題とはなりませんが、Windows上で構築するには、次の2つのLinuxで著名なコマンドラインツールを導入をしておくとよいでしょう
-
-  - wgetの導入
 
 使用頻度も高いので、ぜひ入れてください。
 
@@ -419,13 +491,13 @@ https://sourceforge.net/projects/gnuwin32/files/wget/1.11.4-1/wget-1.11.4-1-setu
 これを実行するだけです  
 ほかのアーキテクチャでも同様に、利用できるようにしてください
 
-  - Gitの導入
+#### Gitの導入
   
 GitHub環境を自身のマシンに導入する際には、ほぼ必須ともいえるツールです  
 特に、Windowsユーザの皆さんには、Git Bashの導入をお勧めします  
 Git Bashを導入することで、下記、busyboxの導入は不要になるといえます
 
-  - busyboxの導入
+#### busyboxの導入
 
 Git Bashを導入しない場合、Windowsでは、lsなどUnix系コマンドの実行はかなり厄介です(Windows11でかなり良くなりますが)  
 そこで、次のbusyboxの導入が検討されますが、お勧めではありません(https://frippery.org/files/busybox/busybox.exe)
