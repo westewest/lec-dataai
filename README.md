@@ -409,7 +409,7 @@ conda create -n lecmlbk --clone lecml
 #### jupyter AIを導入
 
 ```
-pip install jupyter_ai openai huggingface_hub ipywidgets pillow
+pip install jupyter_ai jupyter_ai_magics openai huggingface_hub ipywidgets pillow
 ```
 
 として導入、jupyter-aiを起動すると、jupyter同様に8888ポートで見えるようになる
